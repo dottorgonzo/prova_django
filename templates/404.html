@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n l10n static %}
+
+{% block title_head %}{% trans "Page not found" %}{% endblock %}
+
+{% block cms_toolbar_area %}{% endblock %}
+
+{% block slider %}
+    <div class='noslider'></div>
+{% endblock slider %}
+
+{% block back %}
+    <div id="header">
+        <div id="logo"><img src="{% static "img/logo.png" %}"></div>
+        <div id="top">
+            <a href="javascript:history.go(-1);"><img src="{% static "img/back.png" %}"></a>
+        </div>
+    </div>
+{% endblock back %}
+
+{% block base_title %}
+    <div class='span12'>
+        <div class="titolo clearfix">
+            <h1>
+                <span>{% trans "Page not found" %}</span>
+            </h1>
+        </div>
+    </div>
+{% endblock %}
+
+{% block base_content %}
+
+    <div id="descrizione" class='clearfix'>
+        <div class="text_content">
+            {% trans "Page or translation not found" %}
+        </div>
+    </div>
+{% endblock %}

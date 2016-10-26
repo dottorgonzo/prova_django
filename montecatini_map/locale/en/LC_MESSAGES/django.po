@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-25 16:45+0100\n"
+"PO-Revision-Date: 2014-04-14 12:53+0200\n"
+"Last-Translator: Federico Gasparro <info@multimediatouring.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
+
+#: cms_app.py:8
+msgid "Map App"
+msgstr "Map"
+
+#: views.py:105
+msgid "Il Vialone dei Bagni"
+msgstr "The Avenue of the Baths"
+
+#: views.py:106
+msgid "Montecatini Alto"
+msgstr ""
+
+#: views.py:107
+msgid "Il 900"
+msgstr "The 20th Century"
+
+#: views.py:108
+msgid "Arte e Cultura"
+msgstr "Art and Culture"
+
+#: views.py:109
+msgid "Shopping"
+msgstr ""
+
+#: views.py:110
+msgid "Free Time"
+msgstr ""
+
+#: views.py:111
+msgid "Food and Drink"
+msgstr ""
+
+#: views.py:112
+msgid "Lodging"
+msgstr ""
+
+#: views.py:113
+msgid "Services"
+msgstr ""
+
+#: templates/map/map.html:4
+msgid "Map"
+msgstr "Map"
+
+#: templates/map/map.html:10
+msgid "Italian"
+msgstr "Italian"
+
+#: templates/map/map.html:11
+msgid "English"
+msgstr "English"
+
+#: templates/map/map.html:12
+msgid "German"
+msgstr "German"
+
+#: templates/map/map.html:13
+msgid "Russian"
+msgstr "Russian"
+
+#: templates/map/map.html:14
+msgid "Spanish"
+msgstr "Spanish"
+
+#: templates/map/map.html:33
+msgid "Nelle vicinanze"
+msgstr "nearby"
+
+#: templates/map/map.html:36
+msgid "Filtro"
+msgstr "Filter"

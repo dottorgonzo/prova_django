@@ -1,0 +1,37 @@
+Django==1.5.5
+Fabric==1.8.3
+Markdown==2.4
+MySQL-python==1.2.5
+Pillow==2.4.0
+South==0.8.4
+cmsplugin-filer==0.9.5
+django-ckeditor==4.0.2
+django-classy-tags==0.5
+django-filer==0.9.5
+django-hvad==0.3
+django-mptt==0.5.5
+django-polymorphic==0.5.3
+django-rosetta==0.7.4
+django-sekizai==0.7
+django-templateaddons==0.1
+djangocms-admin-style==0.2.1
+-e git://github.com/divio/djangocms-column.git@f7ce587a227e7df5bbe276840b2405fcd421b2a4#egg=djangocms_column-master
+-e git://github.com/divio/djangocms-file.git@47127643a28ef71a9bf044a1a12cdd87a9984408#egg=djangocms_file-master
+-e git://github.com/divio/djangocms-flash.git@4b465fd99a601830fb90e0c69d9a8dc853e061a5#egg=djangocms_flash-0.0.2
+-e git://github.com/divio/djangocms-googlemap.git@bee9055f24bce558dc67f00c41d31e5ce80130a2#egg=djangocms_googlemap-master
+-e git://github.com/divio/djangocms-inherit.git@7c18b91bedd5b61a62e02e694f570155f8037484#egg=djangocms_inherit-master
+-e git://github.com/divio/djangocms-link.git@f97049d87d8dfac963ee271572bcedb3054e953d#egg=djangocms_link-master
+-e git://github.com/divio/djangocms-picture.git@e3d95d7ab832de940cca312651c0c189ca7e7ae7#egg=djangocms_picture-master
+-e git://github.com/divio/djangocms-style.git@21b5c07a5467b8b4e5ee2ccdd3fa4f42a09ad116#egg=djangocms_style-master
+-e git://github.com/divio/djangocms-teaser.git@48657fc5c952f689577734dc79f310ae690f2b0d#egg=djangocms_teaser-master
+djangocms-text-ckeditor==2.1.4
+-e git://github.com/divio/djangocms-video.git@240e91860b010963f8f70a0db3e5d4e28663664b#egg=djangocms_video-master
+easy-thumbnails==1.5
+ecdsa==0.11
+gunicorn==18.0
+html5lib==1.0b2
+paramiko==1.12.3
+polib==1.0.4
+pycrypto==2.6.1
+requests==2.2.1
+six==1.6.1

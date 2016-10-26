@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-25 16:45+0100\n"
+"PO-Revision-Date: 2014-04-14 13:39+0200\n"
+"Last-Translator: Federico Gasparro <info@multimediatouring.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
+
+#: admin.py:15 models.py:16
+msgid "title"
+msgstr "titolo"
+
+#: cms_app.py:10
+msgid "News App"
+msgstr "Notizie"
+
+#: menu.py:11
+msgid "News Menu"
+msgstr "Notizie"
+
+#: models.py:13
+msgid "date added"
+msgstr "data di aggiunta"
+
+#: models.py:14
+msgid "last update"
+msgstr "ultimo aggiornamento"
+
+#: models.py:17
+msgid "subtitle 1"
+msgstr "sottotitolo 1"
+
+#: models.py:18
+msgid "subtitle 2"
+msgstr "sottotitolo 2"
+
+#: models.py:19
+msgid "content"
+msgstr "contenuto"
+
+#: models.py:21
+msgid "published"
+msgstr "pubblicato"
+
+#: models.py:21
+msgid "The same for all translations. Si consiglia 250x250 pixel, PNG o JPG."
+msgstr "Lo stesso per tutte le traduzioni."
+
+#: models.py:22
+msgid "picture"
+msgstr "immagine"
+
+#: models.py:23
+msgid ""
+"The same for all translations. Si consiglia 640x480 pixel con soggetto "
+"centrale, PNG o JPG. ATTENZIONE: la visualizzazione cambia da dispositivo a "
+"dispositivo."
+msgstr "Usato per tutte le traduzioni."
+
+#: models.py:33
+msgid "news"
+msgstr "notizia"
+
+#: models.py:34
+msgid "news_plural"
+msgstr "notizie"
+
+#: templates/news/index.html:6
+msgid "News"
+msgstr "Notizie"
+
+#: templates/news/index.html:10 templates/news/page.html:8
+msgid "Italian"
+msgstr "Italiano"
+
+#: templates/news/index.html:11 templates/news/page.html:9
+msgid "English"
+msgstr "Inglese"
+
+#: templates/news/index.html:12 templates/news/page.html:10
+msgid "German"
+msgstr "Tedesco"
+
+#: templates/news/index.html:13 templates/news/page.html:11
+msgid "Russian"
+msgstr "Russo"
+
+#: templates/news/index.html:14 templates/news/page.html:12
+msgid "Spanish"
+msgstr "Spagnolo"
+
+#: templates/news/index.html:23
+msgid "NEWS"
+msgstr "NOTIZIE"

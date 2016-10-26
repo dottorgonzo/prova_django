@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load cms_tags i18n %}
+
+{% block title_head %}{% trans "Centro Commerciale Naturale" %}{% endblock %}
+
+{% block cms_toolbar_area %}{% endblock %}
+
+{% block flags %}
+<div class='flags'>
+    {% language 'it' %}<a class='ita' href='{% url "ccn_index" rootID %}'>{% trans "Italian" %}</a>{% endlanguage %}
+    {% language 'en' %}<a class='eng' href='{% url "ccn_index" rootID %}'>{% trans "English" %}</a>{% endlanguage %}
+    {% language 'de' %}<a class='deu' href='{% url "ccn_index" rootID %}'>{% trans "German" %}</a>{% endlanguage %}
+    {% language 'ru' %}<a class='rus' href='{% url "ccn_index" rootID %}'>{% trans "Russian" %}</a>{% endlanguage %}
+    {% language 'es' %}<a class='esp' href='{% url "ccn_index" rootID %}'>{% trans "Spanish" %}</a>{% endlanguage %}
+    {% language 'fr' %}<a class='fra' href='{% url "ccn_index" rootID %}'>{% trans "French" %}</a>{% endlanguage %}
+    {% language 'zh' %}<a class='cin' href='{% url "ccn_index" rootID %}'>{% trans "Chinese" %}</a>{% endlanguage %}
+</div>
+{% endblock %}
+
+{% block slider %}
+    <div class='noslider'></div>
+{% endblock slider %}
+
+{% block base_title %}
+<div class='span12'>
+  <div class="titolo clearfix">
+    <h1>
+      {% if rootID == 1 %}
+        <img src="{{ STATIC_URL }}img/icona-dettaglio-shopping.png">
+        <span>{% trans "Shopping" %}</span>
+      {% elif rootID == 2 %}
+        <img src="{{ STATIC_URL }}img/icona-dettaglio-tempolibero.png">
+        <span>{% trans "Free Time" %}</span>
+      {% elif rootID == 3 %}
+        <img src="{{ STATIC_URL }}img/icona-dettaglio-mangiare.png">
+        <span>{% trans "Food and Drink" %}</span>
+      {% elif rootID == 4 %}
+        <img src="{{ STATIC_URL }}img/icona-dettaglio-dormire.png">
+        <span>{% trans "Lodging" %}</span>
+      {% elif rootID == 5 %}
+        <img src="{{ STATIC_URL }}img/icona-dettaglio-servizi.png">
+        <span>{% trans "Services" %}</span>
+      {% endif %}
+    </h1>
+  </div>
+</div>
+{% endblock %}
+
+{% block base_content %}
+<div id="tutti" class="clearfix">
+    <ul>
+        {% for category in categories %}
+            <li class="withlink">
+                <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+            </li>
+        {% empty %}
+            <li>
+                <p>{% trans "No categories found" %}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

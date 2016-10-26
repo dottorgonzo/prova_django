@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags i18n %}
+
+{% block base_title %}
+    <div class='span12'>
+        <div class="titolo clearfix">
+            <h1>
+                <span>{% page_attribute "page_title" %}</span>
+            </h1>
+        </div>
+    </div>
+{% endblock %}
+{% block flags %}
+    <div class='flags'>
+        <a class='ita' href={% page_language_url "it" %}>{% trans "Italian" %}</a>
+        <a class='eng' href={% page_language_url "en" %}>{% trans "English" %}</a>
+        <a class='deu' href={% page_language_url "de" %}>{% trans "German" %}</a>
+        <a class='rus' href={% page_language_url "ru" %}>{% trans "Russian" %}</a>
+        <a class='esp' href={% page_language_url "es" %}>{% trans "Spanish" %}</a>
+        <a class='fra' href={% page_language_url "fr" %}>{% trans "French" %}</a>
+        <a class='cin' href={% page_language_url "zh" %}>{% trans "Chinese" %}</a>
+    </div>
+{% endblock %}
+{% block base_content %}
+
+    <div id="testo">
+        {% placeholder content %}
+    </div>
+
+{% endblock %}

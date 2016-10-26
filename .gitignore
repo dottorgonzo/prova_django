@@ -1,0 +1,17 @@
+.cache/*
+.idea/*
+eggcache/*
+env/*
+media/*
+resources/*
+
+local_settings.py
+
+*.pyc
+*.swp
+*.mo
+manuali/Gestione esercizi commerciali.mov
+manuali/Gestione eventi.mov
+manuali/Gestione immagini slider delle linee metropolitane.mov
+manuali/Gestione notizie.mov
+manuali/Gestione punti di interesse.mov

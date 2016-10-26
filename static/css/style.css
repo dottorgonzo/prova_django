@@ -1,0 +1,709 @@
+* { margin: 0; padding: 0; border: 0; -webkit-overflow-scrolling: touch; }
+/* http://johanbrook.com/browsers/native-momentum-scrolling-ios-5/ */
+
+* {
+  text-shadow: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  border: 0;
+}
+
+*:not(input,textarea) {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+input {
+  -webkit-user-select: auto !important;
+}
+
+
+body { margin:0; border:0; font-family:helvetica, sans-serif; background:#e8f3f8; font-size: 16px; padding: 0; }
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 700px;
+  overflow: hidden;
+}
+
+/* #loader { width: 100%; height: 100px; position: absolute; top: 0; left: 0; background: #000 url('../img/loader.gif') no-repeat top center; z-index: 100000; display: block; opacity: 0.5} */
+#loader { width: 100%; height: 100px; position: absolute; top: 0; left: 0; background: #000; z-index: 100000; display: block; opacity: 0.5}
+#loader img { width: 50px; position: fixed; top: 25%; left: 43%; }
+
+.break { clear: both; }
+
+a{ text-decoration:none; color:#000; opacity: 1!important; }
+a:active { text-decoration: none; color: #000; opacity: 0.5!important; }
+a:focus{ text-decoration: none!important; color: #000; opacity: 1!important; }
+a:visited { text-decoration: none; color: #000; opacity: 1!important; }
+a:hover { text-decoration: none; color: #000; opacity: 0.5!important; }
+#cont {
+  position:relative;
+  padding-bottom: 130px;
+}
+
+#header {width: 100%; height: 110px; position: absolute; top: 0; left: 0; overflow: hidden; z-index: 1000; background: transparent url(../img/pixel-biango.png) top left repeat; box-shadow: 0 2px 2px #aaaaaa;}
+#top { position: absolute; top: 37px; left: 50px; width: 49px; height: 36px; padding: 0; }
+#logo { width: 423px; margin: 0 auto; height: 110px; }
+#logo img { margin-top: 27px; }
+
+#banner-fade {margin:0 0 0 0;
+width:100%;
+height: 200px;
+}
+
+
+ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
+
+ol.bjqs-markers { margin: -110px auto}
+
+ol.bjqs-markers li{display:inline;
+}
+
+ol.bjqs-markers.h-centered {text-align:center}
+
+ol.bjqs-markers li a{
+	padding:0 5px;
+	background:#e5e5e5;
+	color:#fff;
+	margin:8px;
+	text-decoration: none;
+	border-radius:15px;
+	text-indent:-100px;
+	overflow:hidden;
+}
+
+ol.bjqs-markers li.active-marker a,
+ol.bjqs-markers li a:hover{
+	background: #999;
+}
+
+#banner-fade img { height: 200px; }
+
+.titolohome {width:100%;
+text-align:center;
+color:#003b67;
+background:#f1f8fb;
+font-size:28px;
+    padding: 20px 0;
+box-shadow: 0 2px 2px #aaaaaa
+}
+
+.linea {margin: 2% 0 0 6%;
+width:170px;
+float:left;
+z-index:1000
+}
+.linea p {text-align:center;
+margin-top:-75px;
+color:#fff;
+font-size:24px
+}
+
+.linea img {width:170px;
+height:170px}
+
+#terzo{width:100%;
+position:absolute;
+text-align:center;
+color:#003b67;
+background:#d7e8f0;
+margin-top:115%;
+font-size:28px;
+box-shadow: 0 2px 2px #aaaaaa
+}
+
+#bottoni2 {position:absolute;
+margin-top:130%;
+}
+
+#bottoni2 .button p {color:#003b67}
+
+
+#quarto{width:100%;
+position:absolute;
+text-align:center;
+color:#003b67;
+background:#d7e8f0;
+margin-top:190%;
+font-size:28px;
+box-shadow: 0 2px 2px #aaaaaa
+}
+
+#ultimo {position:absolute;
+margin-top:205%;
+width:100%;
+
+}
+
+
+#mappa { margin: 0 auto; width:700px; height:600px;  }
+#mappa img{ width:100%; height:100%; }
+
+
+#storia{margin-top:3%;
+color:#003b67;
+}
+
+#storia p {width:80%;
+float:left;
+font-size:32px;}
+
+#storia img{  float: left;
+    height: 50px;
+    margin: 25px 25px 0 10%;
+    width: 50px;
+}
+
+#rossa{margin-top:3%;
+color:#be3132;
+}
+
+#rossa p {width:700px;
+float:left;
+font-size:32px;}
+
+#rossa img{  float: left;
+    height:60px;
+    margin: 25px 25px 0 10%;
+    width: 60px;
+}
+
+
+#mappalinea img{border: 5px solid white;
+    height: 750px;
+    margin-left: 7%;
+    width: 830px;}
+
+
+#download {    height: 64px;
+    margin-left: 830px;
+    margin-top: -70px;
+    position: absolute;
+    width: 54px;}
+
+
+
+.pageContent { width: 96%;
+height:550px
+ }
+
+	#sociallinea{width:385px; margin-left:25%}
+
+
+	video {margin-left:4%;
+	margin-top:10px
+	}
+
+
+#altre {text-align:center;
+margin-left:20%;
+width:590px
+}
+
+.rossa {margin: 2%;
+width:170px;
+float:left;
+z-index:1000
+}
+.rossa p {text-align:center;
+margin-top:-75px;
+color:#fff;
+font-size:24px
+}
+
+.rossa img {width:170px;
+height:170px}
+
+#lista{margin-top:3%;
+color:#003b67;
+}
+
+#lista p {width:80%;
+float:left;
+font-size:32px;}
+
+#lista img{  float: left;
+    height: 50px;
+    margin: 25px 25px 0 10%;
+    width: 50px;
+}
+
+#negozio{margin-top:3%;
+color:#003b67;
+}
+
+#negozio p {width:80%;
+float:left;
+font-size:32px;}
+
+#negozio img{  float: left;
+    height: 50px;
+    margin: 25px 25px 0 10%;
+    width: 50px;
+}
+
+#descrizione {width:80%;
+text-align:left;
+margin: 25px 25px 0 10%;
+font-size:27px
+}
+
+#descrizione .text_content p { line-height: 1em; font-size: 15px; }
+
+#descrizione ul{list-style:none;
+margin-top:7%;
+margin-left:-5%
+}
+
+#descrizione ul li{color:#000;
+font-size:27px;
+width:100%;
+background:#cadfe9;
+border-radius:12px;
+padding:10px;
+margin-top:10px
+}
+
+#descrizione ul li p{width:93%;
+float:left;
+margin-top:5px
+}
+
+#like { text-align: center; }
+#like img{ margin:5% 0 5% 10%; }
+#like a { float: none; display: inline-block; }
+
+h1 { color:#003b67; text-transform: uppercase; width:80%; font-size:32px; margin: 50px auto; line-height: 30px; }
+
+#eventi { margin-top:3%; color:#003b67; }
+#eventi p { width:80%; float:left; font-size:32px; }
+#eventi img { float: left; height: 50px; margin: 25px 25px 0 10%; width: 50px; }
+
+#evento{ margin-top:3%; color:#003b67; }
+#evento p { width:80%; float:left; font-size:32px; }
+#evento img { float: left; height: 50px; margin: 25px 25px 0 10%; width: 50px; }
+#evento .imagecontainer { margin: 0; padding: 0; width: 190px; height: 190px; }
+
+#dettaglioevento { width:80%; text-align:left; margin: 25px 25px 0 10%; }
+#dettaglioevento ul { width:100%; list-style:none; border-radius:12px; margin-top:120px; }
+#dettaglioevento ul li { width:100%; font-size:27px; margin: 15px 0 0 0; padding: 15px; border-radius:12px; }
+#dettaglioevento ul li p { width:100%; font-size:27px; margin: 15px 0 0 0; padding: 15px; border-radius:12px; }
+#dettaglioevento ul li.eventheader img { width: 190px; height: 190px; }
+#dettaglioevento ul li p.eventtitle { float: right; font-size: 27px; margin-top: 30px; width: 70%; }
+
+#footer  { position: absolute; bottom: 0; margin: 0 auto; width:100%; text-align:center; color:#00415f; background: transparent url(../img/footer.png) bottom center no-repeat; background-position: contain; background-position: top center; }
+#footer p { padding-top: 50px; font-size: 22px; }
+#footer .credits { padding: 0; background: #fff; opacity: 0.5; margin-bottom: 10px; height: 22px; }
+#footer .credits a { font-weight: bold; font-size: 1em; line-height: 22px; }
+
+#languageoverlay { display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: transparent url('../img/overlay.png') repeat; ; z-index: 10000;}
+/* #languageoverlay { display: block; } */
+#language { display: none; width: 60%; position: fixed; top: 20%; left: 20%; background: #f1f8fb; z-index: 10001;  box-shadow: 0 2px 2px #aaaaaa; text-transform: capitalize; }
+/* #language { display: block; } */
+#language .flags { padding: 20px; padding-bottom: 10px; }
+#language .flags a { display: block; width: 150px; height: 30px; overflow: hidden; padding-left: 70px; margin-bottom: 10px; line-height: 30px; }
+
+
+/* .flags { background: #f1f8fb; padding: 5px 0; } */
+/* .flags a { display: inline-block; width: 50px; height: 30px; overflow: hidden; text-indent: -10000px; } */
+.flags .ita { background: transparent url('../img/ita.png') no-repeat; }
+.flags .eng { background: transparent url('../img/eng.png') no-repeat; }
+.flags .deu { background: transparent url('../img/deu.png') no-repeat; }
+.flags .rus { background: transparent url('../img/rus.png') no-repeat; }
+.flags .esp { background: transparent url('../img/esp.png') no-repeat; }
+.flags .fra { background: transparent url('../img/fra.png') no-repeat; }
+.flags .cin { background: transparent url('../img/cin.png') no-repeat; }
+
+#currentlanguage { width: 60px; height: 40px; position: absolute; bottom:15px; right: 20px; background: transparent url("../img/pixel-biango.png") repeat; }
+
+#currentlanguage span { width: 50px; height: 30px; display: block; cursor: pointer; position: absolute; top: 5px; left: 5px; }
+#currentlanguage .it { background: transparent url('../img/ita.png') no-repeat; }
+#currentlanguage .en { background: transparent url('../img/eng.png') no-repeat; }
+#currentlanguage .de { background: transparent url('../img/deu.png') no-repeat; }
+#currentlanguage .ru { background: transparent url('../img/rus.png') no-repeat; }
+#currentlanguage .es { background: transparent url('../img/esp.png') no-repeat; }
+#currentlanguage .fr { background: transparent url('../img/fra.png') no-repeat; }
+#currentlanguage .zh { background: transparent url('../img/cin.png') no-repeat; }
+
+#content {  }
+
+.contentpage { width:80%; margin: 10px auto 40px; }
+.contentpage .top { border-radius:12px; background: white; padding: 20px; }
+.contentpage .image { width: 190px; height: 190px; float: left; }
+.contentpage .abstract { height: 190px; float: left; margin-left: 20px; width: 500px; }
+.contentpage .abstract h2 { font-size: 30px; }
+.contentpage .abstract p { margin-top: 10px; font-size: 20px; }
+.contentpage .text { margin-top: 40px; }
+#listaeventi ul { list-style:none; }
+
+#tutti { width:95%; text-align:left; margin: 0 auto; font-size:27px; }
+#tutti ul { list-style:none; }
+#tutti ul li { color:#fff; font-size:30px; width:100%; background:#003b67; border-radius:8px; padding: 0; margin: 0; margin-bottom: 4px; }
+#tutti ul li a { padding: 30px; color: inherit; line-height: 2em; text-transform: uppercase; display: block; font-weight: bold; }
+#tutti ul li p { padding: 30px; color: inherit; line-height: 2em; text-transform: uppercase; display: block; }
+
+#testo {width:80%; text-align:left; margin: 25px 25px 0 10%; font-size:27px; min-height:300px; overflow: hidden; }
+#testo p { margin-bottom: 20px; }
+
+.bottoni { width: 720px; margin: 0 auto; }
+.bottoniccn { width: 720px; margin: 0 auto; }
+.bottoniccn .button p { color: #003b67; top: 108px; text-transform: uppercase; }
+
+.button { width:160px; height: 160px; position: relative; float: left; z-index:1000; margin: 20px 40px; }
+.button img{ width:160px; height:160px; position: absolute; top: 0; left: 0;}
+.button p {text-align:center; position: absolute; top: 100px; left: 10px; width: 140px; text-transform: uppercase; font-size:18px; color:#fff; overflow: hidden; height: 48px; }
+.button a { float: left; width: 100%; height: 100%; }
+
+#metro { }
+#metro .button { margin: 20px 10px; }
+#metro .button p { font-size: 22px; }
+
+.youtube { margin: 0 auto; width: 855px; overflow: hidden; background: red; }
+audio{ margin: 20px auto; width: 855px; }
+
+.accordion { list-style-type: none; padding: 0; margin: 0 0 30px; border: 0 ; border-top: none; border-left: none; font-size:36px}
+.accordion ul { padding: 0; margin: 0; display: block; width: 100%;  }
+.accordion li { background: #be3132; cursor: pointer; list-style-type: none; padding:0; margin: 5px; float: left; display: block; width: 100%; border-radius:12px}
+.accordion li.active>a { background: transparent url('../img/tendina-giu-bianco.png') no-repeat center right;background-position: 98% }
+/* .accordion li div { padding: 20px; background: #fff; display: block; clear: both; width: 98%;} */
+.accordion a { text-decoration: none; border-bottom: 0 ; font: bold 1.1em/2em; color: #fff; padding: 20px 10px; display: block; cursor: pointer; background: url('../img/tendina-su-bianco.png') no-repeat 98% center; font-weight: bold; }
+.accordion a span { width: 90%; display: inline-block; line-height: 1.4em; font-weight: bold; }
+.accordion li ul li { background: #c1c2c2; font-size: 1em; border-radius:12px; width:99%}
+.accordion li ul li a{color:#696969; background-position:97%; background: url("../img/tendina-su-grigio.png") no-repeat scroll 98% center transparent;}
+.accordion li ul {background-color:#fff}
+.accordion li p {color:#be3132; margin-left:40px; width:300px}
+.accordion li div p{width:98%; color:#000; margin-left:20px}
+
+.accordion li div { background: white; width: 99%; margin: 0 auto; padding: 0; border-radius:12px; padding: 10px 0; }
+.accordion li ul { background: white; }
+.accordion li ul li { background: white; }
+.accordion #like { width: 90%; }
+.accordion #like a { padding: 0; }
+
+.red { color: #be3132; }
+.yellow { color: #9a7406; }
+.green { color: #195b28; }
+.blue { color: #091440; }
+
+.linearossa .accordion li { background: #be3132; }
+.linearossa .accordion h3 { color: #be3132; font-weight: bold; }
+.lineablu .accordion li { background: #091440; }
+.lineablu .accordion h3 { color: #091440; font-weight: bold; }
+.lineagialla .accordion li { background: #9a7406; }
+.lineagialla .accordion h3 { color: #9a7406; font-weight: bold; }
+.lineaverde .accordion li { background: #195b28; }
+.lineaverde .accordion h3 { color: #195b28; font-weight: bold; }
+
+.portamiqui { color:#000; font-size:27px; width:100%; background:#cadfe9; border-radius:12px; padding:10px; margin-top:10px }
+.portamiqui a { text-align: center; display: block; font-size: 0.8em; }
+
+.noslider { display: block; width: 100%; height: 60px; }
+
+.accordion .portamiqui { width: 75%;  background: #cadfe9; margin: 0 auto; padding: 0; border-radius:12px; padding: 10px 0; }
+
+.accordion .portamiqui div { text-align: center; display: block; margin: 0 auto; background: none; font-size: 0.8em; }
+
+#tutti ul li.withlink { background: #003b67 url(../img/freccismo-liste.png) 890px center no-repeat; }
+
+.montecatiniinbreve { padding: 15px 0; padding-bottom: 0; }
+
+.metropolitanaculturale { background: #bedae6; padding: 15px 0; margin-bottom: 15px; }
+.metropolitanaculturale .titolohome { background: #d7eaf1; }
+
+.centrocommercialenaturale { background: #e8f3f8 url('../img/bg-ccn.png') no-repeat top center; background-size: contain; }
+
+/* Large desktop */
+@media (min-width: 980px) {
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 2000px) {
+
+  * { margin: 0; padding: 0; }
+
+  h1,h2, h3 { font-size: 1em; margin: 0; }
+  p { background: transparent!important; }
+  ul { background: transparent!important; }
+
+  #cont { box-shadow: 0 2px 2px #ddd; }
+
+  #header { height: auto; padding-bottom: 20px; }
+  #logo { width: 80%; height: auto; position: relative; }
+  #logo img { margin-top: 5%; }
+
+  #top { height: auto; width: auto; left: 10px; top: 20px; }
+  #top img { width: 30px; }
+
+
+  #logo { width: 50%; top: 0px; }
+  #currentlanguage { bottom: 0; right: -100px;  height: 34px!important; width: 70px; }
+  #currentlanguage span { background-size: contain!important; width: 40px; height: 24px!important; }
+  #currentlanguage .freccia { width: 10px; height: 10px; background: transparent url('../img/tendina-giu-bianco.png') no-repeat; position: absolute; top: 12px; right: 5px; }
+
+  .titolo {
+    width:100%;
+    text-align:center;
+    color:#003b67;
+    font-size:28px;
+    padding: 20px 0;
+  }
+
+  .titolo { padding: 20px 0; width: auto; }
+  .titolo h1 { font-size: 0.6em; line-height: 1em; width: 90%; margin: 0 auto; text-align: left; }
+  .titolo img { float: left; margin-right: 10px; }
+  .titolo span { height: 30px; line-height: 30px; }
+
+  .titolohome { padding: 10px; width: auto; }
+  .titolohome h2 { font-size: 0.55em; line-height: 1.2em; }
+  .titolohome p { font-size: 0.45em; line-height: 1.2em; margin: 0; }
+
+  .noslider { height: 100px; }
+
+  #listaeventi { margin-bottom: 30px; }
+
+  .bottoni { width: 360px; margin: 0 auto; padding: 20px 0;}
+
+  .button { width:100px; height: 100px; position: relative; float: left; z-index:1000; margin: 10px; }
+  .button img{ width:100%; height:100%; position: absolute; top: 0; left: 0;}
+  .button p {text-align:center; position: absolute; bottom: 10%; margin: 0; left: 0; width: 80%; margin: 0 10%; text-transform: uppercase; font-size:0.6em; color:#fff; overflow: hidden; height: 3em; top: auto; line-height: 1.2em; }
+  .button a { float: left; width: 100%; height: 100%; }
+
+  #descrizione { margin: 0 auto; width: 90%; }
+  #descrizione ul { margin: 20px 0 0 0; }
+  #descrizione ul li { padding: 10px 0; width: auto; overflow: hidden; }
+  #descrizione ul li a { float: left; width: 100%; height: 100%; }
+  #descrizione ul li img { float: left; margin-left: 10px; }
+  #descrizione ul li p { width: auto; font-size: 0.7em; margin-left: 10px; }
+
+  #descrizione .text_content p { line-height: 1em; font-size: 0.7em; }
+
+  .centrocommercialenaturale { background-size: cover; }
+
+  #metro .button { width:150px; height: 150px; position: relative; float: left; z-index:1000; margin: 10px; opacity: 1; }
+  #metro .disabled { opacity: 0.5; }
+  #metro .button p { font-size: 1em; height: 3.0em; }
+
+  #mib { width: 318px; }
+  #ccn { width: 318px; }
+  #mt { width: 318px; }
+  #mappa { width: 318px; }
+
+  #mib .button { margin: 3px; width: 100px; height: 100px; }
+  #mib .button div { display: table; height: 40px; position: absolute; width: 90%; left: 5%; bottom: 5px; }
+  #mib .button p { display: table-cell; vertical-align: middle; position: static; height: auto; text-align: center; color: #fff; font-size: 0.5em; }
+
+  #mc { margin: 0 auto; padding: 10px 0 ; width: 424px; }
+  #mc .button { margin: 3px; width: 100px; height: 100px; }
+  #mc .button div { display: table; height: 35px; position: absolute; width: 90%; left: 5%; bottom: 0; }
+  #mc .button p { display: table-cell; vertical-align: middle; position: static; height: auto; text-align: center; color: #fff; font-size: 0.5em; }
+
+  #ccn .button { margin: 3px; width: 100px; height: 100px; }
+  #ccn .button div { display: table; height: 35px; position: absolute; width: 100%; bottom: 5px; }
+  #ccn .button p { display: table-cell; vertical-align: middle; position: static; height: auto; text-align: center; color: #003B67; }
+
+  #mt .button { margin: 3px; width: 100px; height: 100px; }
+  #mt .button div { display: table; height: 35px; position: absolute; width: 100%; bottom: 0; }
+  #mt .button p { display: table-cell; vertical-align: middle; position: static; height: auto; text-align: center; color: #fff; }
+
+  #mappa { margin-bottom: 35px; }
+  #tutti { margin-bottom: 35px; }
+  #descrizione { margin-bottom: 35px; }
+
+  #listaeventi { }
+  #listaeventi ul { margin: 0; }
+
+  .contentpage { width:90%; margin: 0 auto;  margin-bottom: 2%; }
+  .contentpage .top { border-radius:10px; background: white; padding: 10px; }
+  .contentpage .image { width: 25%; height: 77px; float: left; margin-right: 2%; overflow: hidden; }
+  .contentpage .abstract { width: 70%; height: 80px; float: left; margin: 0; }
+  .contentpage .abstract h2 { font-size: 1.1em; line-height: 1.3em; margin: 0; margin-bottom: 0.5em; }
+  .contentpage .abstract p { font-size: 0.8em; line-height: 1.3em; margin: 0; }
+
+  .contenttext { width: 90%; margin: 0 auto; overflow: hidden; }
+  .contenttext p { font-size: 0.8em; line-height: 1.3em; margin: 0; }
+
+  #testo { width: 90%; margin: 0 auto; font-size: 22px; }
+  #testo p { font-size: 0.7em; line-height: 1.3em; margin-bottom: 1em; }
+  #testo li { font-size: 0.7em; line-height: 1.3em; margin-bottom: 1em; }
+
+  audio { width: 90%; margin: 5%; margin-bottom: 0; }
+
+  .pageContent { height: auto; }
+
+  .accordion { list-style-type: none; padding: 0; margin: 0; border: 0; font-size:22px background: blue; margin: 0 auto; }
+  .accordion li { cursor: pointer; list-style-type: none; padding:0; margin: 5px; float: left; display: block; width: 100%; border-radius:8px; padding-bottom: 2px; }
+  .accordion li div { background: white; width: 100%; margin: 0 auto; padding: 0; padding: 10px 0; border-radius: 0; }
+  .accordion a { text-decoration: none; font-weight: normal; font-size: 0.5em; text-transform: uppercase; color: #fff; padding: 10px; line-height: 1.3em; }
+
+  .accordion .subaccordion { }
+  .accordion .subaccordion h3 { font-size: 0.5em; font-weight: bold; line-height: 1.4em; padding: 0 5%; }
+  .accordion .subaccordion .plugin_picture { width: 95%; display: block; margin: 0 auto; margin-bottom: 5%; }
+  .accordion .subaccordion .content { background: transparent; width: 90%; margin: 5% auto; font-size: 20px; }
+  .accordion .subaccordion .content p { width: auto; font-size: 0.8em; line-height: 1.3em; margin: 0; }
+
+  .accordion .carousel { padding: 0; height: 380px; overflow: hidden; border-radius: 0; margin-bottom: 10px; }
+  .accordion .carousel-inner { padding: 0; height: 380px; overflow: hidden; }
+
+  #tutti {  }
+  #tutti ul { margin: 0; }
+  #tutti li { cursor: pointer; list-style-type: none; padding: 0 0 2px 0; margin: 5px; float: left; display: block; width: 100%; border-radius:10px; background: none; }
+  #tutti ul li a { text-decoration: none; font-weight: bold; font-size: 0.5em; text-transform: uppercase; color: #fff; padding: 10px; line-height: 1.3em; margin: 0; }
+  #tutti ul li p { text-decoration: none; font-weight: normal; font-size: 0.5em; text-transform: uppercase; color: #fff; padding: 10px; line-height: 1.3em; margin: 0; }
+
+  #metro h3 { font-size: 0.9em; line-height: 1em; margin: 1em 0; text-align: center; }
+
+  #like { margin: 5% auto; }
+  #like a { display: inline-block; width: 80px; height: 80px; float: none; margin: 0 7px; }
+  #like img { margin: 0; float: left; width: 100%; height: 100%; }
+
+  #mappa { width: 360px; overflow: hidden; margin: 0 auto; overflow: hidden; height: 270px; margin-bottom: 35px; }
+  #mappa a { float: left; width: 100%;height:100%;  background: transparent url('../img/custom-map.png') no-repeat top center; background-size: 100%; }
+  #map { width: 100%; height: 300px; margin: 0 auto; background: transparent;}
+  #map img { width: auto!important; max-width: none!important; }
+
+  .infowin { position: relative; margin-top: 5px; }
+  .infowin .title { width: 180px; color: #5b5b5b; font-weight: bold; text-transform: uppercase; font-size: 14px; }
+  .infowin .distance { width: 180px; color: #5b5b5b; font-style: italic; }
+  .infowin .link { width: 20px; height: 20px; overflow: hidden; position: absolute; top: 10px; right: 0; }
+  .infowin .link a { float: left; width: 100%; height: 100%; text-indent: -10000px; background: transparent url('../img/pallocchio-fumetto.png') no-repeat; }
+
+  #filters { width: 90%; margin: 0 auto; line-height: 36px; }
+  #filters h3 { font-weight: normal; color: #5b5b5b; float: left; }
+  #filters select { margin-bottom: 0; margin-left: 10px; }
+  #filters .left { width: 40%; float: left; }
+  #filters .left h3 { width: 90%; margin-left: 15px; }
+  #filters .right { width: 60%; float: right; }
+
+  #pois { width: 100%; margin: 0 auto; height: 400px; overflow: auto; }
+  #pois .poi { width: 90%; background: #ccc; border-radius: 5px; margin: 10px auto; }
+  #pois .poi .wrap { padding: 8px; }
+  #pois .poi .title { text-transform: uppercase; font-weight: bold; }
+  #pois .poi .distance { font-style: italic; }
+
+  /**************/
+  #pois a { color: inherit; }
+  #pois .wrap { width: 95%; margin-left: 4px; }
+  #pois .linearossa { background: #be3132; color: #fff; }
+  #pois .linearossa .wrap { background: #be3132 url('../img/icona-mappa-linearossa-on.png') no-repeat center right; color: #fff; }
+  #pois .lineaverde { background: #195b28; color: #fff; }
+  #pois .lineaverde .wrap { background: #195b28 url('../img/icona-mappa-lineaverde-on.png') no-repeat center right; color: #fff; }
+  #pois .lineagialla { background: #9a7406; color: #fff; }
+  #pois .lineagialla .wrap { background: #9a7406; color: #fff; }
+  #pois .lineablu { background: #091440 url('../img/icona-mappa-lineablu-on.png') no-repeat center right; color: #fff; }
+  #pois .lineablu .wrap { background: #091440 url('../img/icona-mappa-lineablu-on.png') no-repeat center right; color: #fff; }
+  #pois .tempolibero { background: #bfc0c2; color: #5b5b5b; }
+  #pois .tempolibero .wrap { background: #bfc0c2 url('../img/icona-mappa-tempolibero-off.png') no-repeat center right; color: #5b5b5b; }
+  #pois .shopping { background: #bfc0c2; color: #5b5b5b; }
+  #pois .shopping .wrap { background: #bfc0c2 url('../img/icona-mappa-shopping-off.png') no-repeat center right; color: #5b5b5b; }
+  #pois .dormire { background: #bfc0c2; color: #5b5b5b; }
+  #pois .dormire .wrap { background: #bfc0c2 url('../img/icona-mappa-dormire-off.png') no-repeat center right; color: #5b5b5b; }
+  #pois .mangiare { background: #bfc0c2; color: #5b5b5b; }
+  #pois .mangiare .wrap { background: #bfc0c2 url('../img/icona-mappa-mangiare-off.png') no-repeat center right; color: #5b5b5b; }
+  #pois .servizi { background: #bfc0c2; color: #5b5b5b; }
+  #pois .servizi .wrap { background: #bfc0c2 url('../img/icona-mappa-servizi-off.png') no-repeat center right; color: #5b5b5b; }
+  /**************/
+
+  #externalmap { position: relative; }
+  #download { margin: 0; position: absolute; bottom: 0; right: 15%;  }
+
+  #footer p { padding-top: 50px; font-size: 1em; line-height: 1.4em; }
+
+  .portamiqui { padding: 10px 0; width: auto; overflow: hidden; }
+}
+
+/* Landscape phones */
+@media (max-width: 480px) {
+  * { margin: 0; padding: 0; }
+
+
+  #logo { width: 47%; top: 0px; }
+  #logo img { margin-top: 10%; }
+  #currentlanguage { bottom: -5px; right: -80px;  height: 34px!important;}
+  #currentlanguage span { background-size: contain!important; width: 40px; height: 24px!important; }
+
+  .bottoni { width: 250px; margin: 0 auto; }
+
+  .titolo h1 { font-size: 0.8em; line-height: 1em; width: 90%; margin: 0 auto; text-align: left; }
+  .titolo span { float: left; width: 230px; font-size: 0.7em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .noslider { height: 60px; }
+
+  #top { top: 15px; }
+
+  #metro { padding: 0; }
+  #metro .button { width: 100px; height: 100px; position: relative; float: left; z-index:1000; margin: 10px; }
+  #metro .button p { font-size: 0.7em; height: 3.7em; }
+
+  #externalmap { height: 250px; overflow: hidden; background: transparent; }
+
+  .contentpage .top { border-radius:7px; background: white; padding: 7px; }
+  .contentpage .image { width: 30%; }
+  .contentpage .abstract, #listaeventi .contentpage .image { height: 75px; overflow: hidden; }
+  .contentpage .abstract { width: 60%; }
+  .contentpage .abstract h2 { font-size: 0.9em; line-height: 1.1em; margin: 0; margin-bottom: 0; }
+  .contentpage .abstract p { font-size: 0.75em; line-height: 1.2em; margin: 0; }
+
+  #mib .button { margin: 3px; width: 77px; height: 77px; }
+  #mib .button div { display: table; height: 35px; position: absolute; width: 90%; left: 5%; bottom: 0; }
+  #mib .button p { display: table-cell; vertical-align: middle; position: static; height: auto; text-align: center; color: #fff; font-size: 0.5em; }
+
+  #mib   { width: 250px; }
+  #ccn   { width: 250px; }
+  #mt    { width: 250px; }
+  #mappa { width: 250px; }
+
+  #mc { margin: 0 auto; padding: 10px 0 0 0; width: 304px; }
+  #mc .button { margin: 3px; width: 70px; height: 70px; }
+  #mc .button div { display: table; height: 35px; position: absolute; width: 90%; left: 5%; bottom: 0; }
+  #mc .button p { display: table-cell; vertical-align: middle; position: static; height: auto; text-align: center; color: #fff; font-size: 0.5em; }
+
+  #ccn .button { margin: 3px; width: 77px; height: 77px; }
+  #ccn .button div { display: table; height: 35px; position: absolute; width: 100%; bottom: 0; }
+  #ccn .button p { display: table-cell; vertical-align: middle; position: static; height: auto; text-align: center; color: #003B67; }
+
+  #mt .button { margin: 3px; width: 77px; height: 77px; }
+  #mt .button div { display: table; height: 35px; position: absolute; width: 100%; bottom: 0; }
+  #mt .button p { display: table-cell; vertical-align: middle; position: static; height: auto; text-align: center; color: #fff; }
+  #testo p { font-size: 0.7em; line-height: 1.3em; margin-bottom: 1em; }
+
+  #filters { background: yellow; width: 100%; line-height: 36px; }
+  #filters h3 { font-weight: normal; color: #5b5b5b; float: left; font-size: 12px; }
+  #filters select { margin-bottom: 0; margin-left: 10px; width: 150px; }
+
+  #pois { height: 250px; overflow: auto; }
+  #pois .wrap { width: 90%; }
+  #pois .poi .title { font-size: 14px; }
+  #pois .poi .distance { font-size: 14px; }
+
+  .accordion a { text-decoration: none; font-size: 0.4em; text-transform: uppercase; color: #fff; padding: 10px; line-height: 1.2em; }
+  .accordion .carousel { padding: 0; height: 250px; overflow: hidden; margin-bottom: 10px; }
+  .accordion .carousel-inner { padding: 0; height: 250px; overflow: hidden; }
+  .accordion .subaccordion .content p { font-size: 0.6em; }
+
+  #descrizione .text_content p { line-height: 1em; font-size: 0.5em; }
+  #descrizione ul li p { width: 210px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 0.5em; margin-right: 10px; line-height: 20px; }
+  #descrizione .information li { padding: 0; }
+  #descrizione .information li img { width: 20px; height: 20px; margin-top: 7px; }
+  #descrizione .information li p { height: 20px; line-height: 20px; margin-top: 7px; font-weight: bold; }
+
+  #like { margin: 5% auto; }
+  #like a { display: inline-block; width: 50px; height: 50px; margin: 0 2px; }
+  #like img { margin: 0; float: left; width: 100%; height: 100%; }
+
+  #footer p { padding-top: 30px; font-size: 0.7em; line-height: 1.5em; }
+  #footer .credits a { font-weight: bold; font-size: 0.7em; }
+}

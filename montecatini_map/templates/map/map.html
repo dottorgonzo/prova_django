@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% load assign montecatini_tags l10n static i18n %}
+
+{% block title_head %}{% trans "Map" %}{% endblock %}
+
+{% block cms_toolbar_area %}{% endblock %}
+
+{% block flags %}
+<div class='flags'>
+    {% language 'it' %}<a class='ita' href='{% url "montecatini_map" %}'>{% trans "Italian" %}</a>{% endlanguage %}
+    {% language 'en' %}<a class='eng' href='{% url "montecatini_map" %}'>{% trans "English" %}</a>{% endlanguage %}
+    {% language 'de' %}<a class='deu' href='{% url "montecatini_map" %}'>{% trans "German" %}</a>{% endlanguage %}
+    {% language 'ru' %}<a class='rus' href='{% url "montecatini_map" %}'>{% trans "Russian" %}</a>{% endlanguage %}
+    {% language 'es' %}<a class='esp' href='{% url "montecatini_map" %}'>{% trans "Spanish" %}</a>{% endlanguage %}
+    {% language 'fr' %}<a class='fra' href='{% url "montecatini_map" %}'>{% trans "French" %}</a>{% endlanguage %}
+    {% language 'zh' %}<a class='cin' href='{% url "montecatini_map" %}'>{% trans "Chinese" %}</a>{% endlanguage %}
+</div>
+{% endblock %}
+
+{% block extraheaders %}
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&sensor=false&extension=.js"></script>
+{% endblock %}
+
+{% block slider %}
+    <div class='noslider'></div>
+{% endblock slider %}
+
+
+
+{% block base_content %}
+<div id='map'></div>
+
+<div id='filters'>
+  <div class='left'>
+    <h3>{% trans "Nelle vicinanze" %}</h3>
+  </div>
+  <div class='right'>
+    <h3>{% trans "Filtro" %}</h3>
+    <select id='filter'>
+    </select>
+  </div>
+</div>
+<div class='break'></div>
+<div id='pois'></div>
+<div class='break'></div>
+<br/><br/>
+
+<script type="text/javascript">
+{% localize off %}
+var mapOptions = {
+  zoom: 4,
+  center: new google.maps.LatLng(43.880633,10.7720853),
+  disableDefaultUI: true,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+
+var markers = [];
+var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+var bounds = new google.maps.LatLngBounds();
+var infoWindow = new google.maps.InfoWindow();
+
+var pois = [];
+var url = "{% url 'montecatini_map_json' %}";
+
+try {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      url += "?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude;
+      $.get(url,function(data) {
+        pois = data;
+        updateTypes(types);
+        updatePois(pois);
+        initialize();
+      });
+    }, function() {
+      $.get(url,function(data) {
+        pois = data;
+        updateTypes(types);
+        updatePois(pois);
+        initialize();
+      });
+    }, {timeout:3000});
+  } else {
+    $.get(url,function(data) {
+      pois = data;
+      updateTypes(types);
+      updatePois(pois);
+      initialize();
+    });
+  }
+} catch (e) {
+}
+
+function createMarker(p, map, pos) {
+  var pinimage = '/static/img/pin-' + p.type + '.png';
+
+  var html = "";
+  html += "<div class='infowin'>";
+  html += "<div class='title'>" + p.title + "</div>";
+  html += "<div class='distance'>" + p.distance + " m</div>";
+  html += "<div class='link'><a href='" + p.url + "'>LINK</a></div>";
+  html += "</div>";
+
+  var onMarkerClick = function() {
+    var marker = this;
+    var latLng = marker.getPosition();
+    infoWindow.setOptions({ maxWidth: 150 });
+    infoWindow.setContent(html);
+    infoWindow.open(map, marker);
+  };
+
+  var marker = new google.maps.Marker({
+    id: p.id,
+    position: pos,
+    map: map,
+    icon: pinimage,
+    type: p.type,
+    title: p.title
+  });
+
+  google.maps.event.addListener(map, 'click', function() {
+    infoWindow.close();
+  });
+
+  google.maps.event.addListener(marker, 'click', onMarkerClick);
+
+  return marker;
+}
+
+function showMarkers(type) {
+  markers = [];
+
+  bounds = new google.maps.LatLngBounds();
+
+  for (var i in pois) {
+    var p = pois[i];
+
+    if (p.type == type) {
+
+      var pos = new google.maps.LatLng(p.latitude, p.longitude);
+      marker = createMarker(p, map, pos);
+
+      markers.push(marker);
+      bounds.extend(pos);
+    }
+  }
+
+  map.fitBounds(bounds);
+}
+
+function clearMarkers() {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+}
+
+function initialize() {
+  clearMarkers();
+  showMarkers('linearossa');
+}
+
+var types = {
+{% for t in types %}
+    "{{ t.0 }}": "{{ t.1|safe }}"
+{% if not forloop.last %},{% endif %}
+{% endfor %}
+};
+
+function updateTypes(types) {
+  for (i in types) {
+    $('<option>')
+      .val(i)
+      .text(types[i])
+      .appendTo($('#filters #filter'));
+  }
+
+  $('#filters #filter')
+    .change(function() {
+        var type = $(this).val();
+        clearMarkers();
+        $('#pois .poi').hide();
+        showMarkers(type);
+        $('#pois').find('.' + type).show();
+    });
+}
+
+function updatePois(pois) {
+  for (i in pois) {
+    p = pois[i];
+
+    var html = "";
+    html += "<div class='wrap'>";
+    html += "<a href='" + p.url + "'>";
+    html += "<div class='title'>" + p.title + "</div>";
+    html += "<div class='distance'>" + p.distance + " m</div>";
+    html += "</a>";
+    html += "</div>";
+
+    var poi = $('<div>')
+      .addClass('poi')
+      .addClass(p.type)
+      .html(html);
+
+    if (p.type != 'linearossa') { poi.hide(); }
+
+    $('#pois').append(poi);
+  }
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+{% endlocalize %}
+</script>
+
+{% endblock %}

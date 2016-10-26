@@ -1,0 +1,12 @@
+{% load i18n %}
+{% if not request.is_cordova %}{% endif %}
+<div class='flags'>
+    <a class='ita' href='/it/'>{% trans "Italian" %}</a>
+    <a class='eng' href='/en/'>{% trans "English" %}</a>
+    <a class='deu' href='/de/'>{% trans "German" %}</a>
+    <a class='rus' href='/ru/'>{% trans "Russian" %}</a>
+    <a class='esp' href='/es/'>{% trans "Spanish" %}</a>
+    <a class='fra' href='/fr/'>{% trans "French" %}</a>
+    <a class='cin' href='/zh/'>{% trans "Chinese" %}</a>
+</div>
+

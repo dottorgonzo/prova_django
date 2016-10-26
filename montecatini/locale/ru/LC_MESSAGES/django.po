@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-25 16:45+0100\n"
+"PO-Revision-Date: 2014-04-14 12:59+0200\n"
+"Last-Translator: Federico Gasparro <info@multimediatouring.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
+
+#: settings.py:235 templates/_flags.html:4
+#: templates/templates/ccn_default.html:16 templates/templates/default.html:15
+msgid "Italian"
+msgstr "Итальянский"
+
+#: settings.py:236 templates/_flags.html:5
+#: templates/templates/ccn_default.html:17 templates/templates/default.html:16
+msgid "English"
+msgstr "Английский"
+
+#: settings.py:237 templates/_flags.html:6
+#: templates/templates/ccn_default.html:18 templates/templates/default.html:17
+msgid "German"
+msgstr "Немецский"
+
+#: settings.py:238 templates/_flags.html:8
+#: templates/templates/ccn_default.html:20 templates/templates/default.html:19
+msgid "Spanish"
+msgstr "Испанский"
+
+#: settings.py:239 templates/_flags.html:7
+#: templates/templates/ccn_default.html:19 templates/templates/default.html:18
+msgid "Russian"
+msgstr "Русский"
+
+#: settings.py:240
+msgid "French"
+msgstr "французский"
+
+#: settings.py:241
+msgid "Chinese"
+msgstr "китайский"
+
+#: templates/404.html:4 templates/404.html.py:25 templates/500.html:4
+#: templates/500.html.py:25
+msgid "Page not found"
+msgstr "Page not found"
+
+#: templates/404.html:35 templates/500.html:35
+msgid "Page or translation not found"
+msgstr "Page or translation not found"
+
+#: templates/admin/base_site.html:4 templates/admin/base_site.html.py:7
+msgid "Comune di Montecatini Terme"
+msgstr "Город  Монтекатини"
+
+#: templates/templates/home.html:8
+msgid "Montecatini in breve"
+msgstr "Kоротко о монтекатини"
+
+#: templates/templates/home.html:9
+msgid "Tutte le informazioni su Montecatini."
+msgstr "Montecatini all news."
+
+#: templates/templates/home.html:45
+msgid "Metropolitana culturale"
+msgstr "Kультурный метрополитен"
+
+#: templates/templates/home.html:46
+msgid "Terme, Architettura, Parchi."
+msgstr "Термы, Aрхитектура, Парки."
+
+#: templates/templates/home.html:53
+msgid "Il Vialone dei Bagni"
+msgstr "Термальные источники"
+
+#: templates/templates/home.html:56
+msgid "Montecatini Alto"
+msgstr "Монтекатини Alto"
+
+#: templates/templates/home.html:59
+msgid "Il 900"
+msgstr "900 года"
+
+#: templates/templates/home.html:62
+msgid "Arte e Cultura"
+msgstr "Культура и искусство"
+
+#: templates/templates/home.html:71
+msgid "Metropolitana commerciale"
+msgstr "Комерческий метрополитен"
+
+#: templates/templates/home.html:72
+msgid "Le vie dello shopping."
+msgstr "Карта магазинов."
+
+#: templates/templates/home.html:79
+msgid "Shopping"
+msgstr "Shopping"
+
+#: templates/templates/home.html:83
+msgid "Free Time"
+msgstr "Cвободное Bремя"
+
+#: templates/templates/home.html:87
+msgid "Food and Drink"
+msgstr "Рестораны"
+
+#: templates/templates/home.html:91
+msgid "Lodging"
+msgstr "Hочлег"
+
+#: templates/templates/home.html:95
+msgid "Services"
+msgstr "Yслуги"
+
+#: templates/templates/home.html:108
+msgid "City Life"
+msgstr "City Life"
+
+#: templates/templates/home.html:109
+msgid "Tieniti aggiornato sulle notizie e gli eventi locali."
+msgstr "Будь в курсе местных новостей и событи."

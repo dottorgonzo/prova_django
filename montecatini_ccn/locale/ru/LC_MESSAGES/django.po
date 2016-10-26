@@ -1,0 +1,170 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-25 16:45+0100\n"
+"PO-Revision-Date: 2014-04-14 14:04+0200\n"
+"Last-Translator: Federico Gasparro <info@multimediatouring.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
+
+#: admin.py:16 admin.py:34 models.py:28 models.py:50
+msgid "title"
+msgstr "титул"
+
+#: cms_app.py:8
+msgid "CCN App"
+msgstr "CCN App"
+
+#: models.py:16 templates/ccn/index.html:28
+msgid "Shopping"
+msgstr "Shopping"
+
+#: models.py:17 templates/ccn/index.html:31
+msgid "Free Time"
+msgstr "Cвободное Bремя"
+
+#: models.py:18 templates/ccn/index.html:34
+msgid "Food and Drink"
+msgstr "Рестораны"
+
+#: models.py:19 templates/ccn/index.html:37
+msgid "Lodging"
+msgstr "Hочлег"
+
+#: models.py:20 templates/ccn/index.html:40
+msgid "Services"
+msgstr "Yслуги"
+
+#: models.py:25 models.py:47 models.py:76
+msgid "date added"
+msgstr "дата добавления"
+
+#: models.py:26 models.py:48 models.py:77
+msgid "last update"
+msgstr "последнее обновление"
+
+#: models.py:30
+msgid "root category"
+msgstr "главная категория"
+
+#: models.py:31 models.py:54 models.py:55 models.py:56 models.py:57
+#: models.py:58 models.py:59 models.py:61
+msgid "The same for all translations."
+msgstr "Используется для всех переводов."
+
+#: models.py:42
+msgid "category"
+msgstr "категория"
+
+#: models.py:43
+msgid "categories"
+msgstr "категории"
+
+#: models.py:51
+msgid "address"
+msgstr "адрес"
+
+#: models.py:52
+msgid "content"
+msgstr "содержание"
+
+#: models.py:55
+msgid "premium"
+msgstr "premium"
+
+#: models.py:56
+msgid "latitude"
+msgstr "широта"
+
+#: models.py:57
+msgid "longitude"
+msgstr "долгота"
+
+#: models.py:58
+msgid "email"
+msgstr "email"
+
+#: models.py:59
+msgid "url"
+msgstr "url"
+
+#: models.py:60
+msgid "phone"
+msgstr "телефон"
+
+#: models.py:71
+msgid "place"
+msgstr "упражнения"
+
+#: models.py:72
+msgid "places"
+msgstr "упражнения"
+
+#: models.py:79 models.py:83
+msgid "picture"
+msgstr "картинка"
+
+#: models.py:79
+msgid ""
+"Si consiglia 640x480 con soggetto centrale. ATTENZIONE: la visualizzazione "
+"cambia da dispositivo a dispositivo."
+msgstr ""
+"Мы рекомендуем 640x480 с основным субъектом. ВНИМАНИЕ: На дисплее появится "
+"от устройства к устройству."
+
+#: models.py:84
+msgid "pictures"
+msgstr "картинка"
+
+#: templates/ccn/category.html:4 templates/ccn/index.html:4
+msgid "Centro Commerciale Naturale"
+msgstr "Centro Commerciale Naturale"
+
+#: templates/ccn/category.html:10 templates/ccn/index.html:10
+#: templates/ccn/place.html:10
+msgid "Italian"
+msgstr "Итальянский"
+
+#: templates/ccn/category.html:11 templates/ccn/index.html:11
+#: templates/ccn/place.html:11
+msgid "English"
+msgstr "Английский"
+
+#: templates/ccn/category.html:12 templates/ccn/index.html:12
+#: templates/ccn/place.html:12
+msgid "German"
+msgstr "Немецский"
+
+#: templates/ccn/category.html:13 templates/ccn/index.html:13
+#: templates/ccn/place.html:13
+msgid "Russian"
+msgstr "Русский"
+
+#: templates/ccn/category.html:14 templates/ccn/index.html:14
+#: templates/ccn/place.html:14
+msgid "Spanish"
+msgstr "Испанский"
+
+#: templates/ccn/category.html:67
+msgid "No places found"
+msgstr "No places found"
+
+#: templates/ccn/index.html:56
+msgid "No categories found"
+msgstr "Hе найдено ни одной категории"
+
+#: templates/ccn/place.html:141
+msgid "PORTAMI QUI"
+msgstr "ПРИBEД MEHЯ CЮДA"

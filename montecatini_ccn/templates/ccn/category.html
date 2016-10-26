@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load cms_tags i18n static %}
+
+{% block title_head %}{% trans "Centro Commerciale Naturale" %}{% endblock %}
+
+{% block cms_toolbar_area %}{% endblock %}
+
+{% block flags %}
+<div class='flags'>
+    {% language 'it' %}<a class='ita' href='{% url "ccn_category" rootID category.id %}'>{% trans "Italian" %}</a>{% endlanguage %}
+    {% language 'en' %}<a class='eng' href='{% url "ccn_category" rootID category.id %}'>{% trans "English" %}</a>{% endlanguage %}
+    {% language 'de' %}<a class='deu' href='{% url "ccn_category" rootID category.id %}'>{% trans "German" %}</a>{% endlanguage %}
+    {% language 'ru' %}<a class='rus' href='{% url "ccn_category" rootID category.id %}'>{% trans "Russian" %}</a>{% endlanguage %}
+    {% language 'es' %}<a class='esp' href='{% url "ccn_category" rootID category.id %}'>{% trans "Spanish" %}</a>{% endlanguage %}
+    {% language 'fr' %}<a class='fra' href='{% url "ccn_category" rootID category.id %}'>{% trans "French" %}</a>{% endlanguage %}
+    {% language 'zh' %}<a class='cin' href='{% url "ccn_category" rootID category.id %}'>{% trans "Chinese" %}</a>{% endlanguage %}
+</div>
+{% endblock %}
+
+{% block slider %}
+    <div class='noslider'></div>
+{% endblock slider %}
+
+{% block back %}
+    <div id="header">
+        <div id="logo"><img src="{% static "img/logo.png" %}">
+             <div id='currentlanguage'>
+              <span class='{{ request.LANGUAGE_CODE }}'></span>
+              <div class='freccia'></div>
+            </div>
+        </div>
+        <div id="top">
+            <a href="{% url "ccn_index" rootID %}"><img src="{% static "img/back.png" %}"></a>
+        </div>
+    </div>
+{% endblock back %}
+
+{% block base_title %}
+<div class='span12'>
+  <div class="titolo clearfix">
+    <h1>
+      {% if rootID == 1 %}
+        <img src="{% static "img/icona-dettaglio-shopping.png" %}">
+      {% elif rootID == 2 %}
+        <img src="{% static "img/icona-dettaglio-tempolibero.png" %}">
+      {% elif rootID == 3 %}
+        <img src="{% static "img/icona-dettaglio-mangiare.png" %}">
+      {% elif rootID == 4 %}
+        <img src="{% static "img/icona-dettaglio-dormire.png" %}">
+      {% elif rootID == 5 %}
+        <img src="{% static "img/icona-dettaglio-servizi.png" %}">
+      {% endif %}
+
+      <span>{{ title }}</span>
+    </h1>
+  </div>
+</div>
+{% endblock %}
+
+{% block base_content %}
+<div id="tutti" class="clearfix">
+    <ul>
+        {% for place in places %}
+            <li class="withlink">
+                <a href="{{ place.get_absolute_url }}">{{ place.title }}</a>
+            </li>
+        {% empty %}
+            <li>
+                <p>{% trans "No places found" %}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

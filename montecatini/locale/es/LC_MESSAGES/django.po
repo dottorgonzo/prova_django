@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-25 16:45+0100\n"
+"PO-Revision-Date: 2014-04-14 12:57+0200\n"
+"Last-Translator: Federico Gasparro <info@multimediatouring.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
+
+#: settings.py:235 templates/_flags.html:4
+#: templates/templates/ccn_default.html:16 templates/templates/default.html:15
+msgid "Italian"
+msgstr "Italiano"
+
+#: settings.py:236 templates/_flags.html:5
+#: templates/templates/ccn_default.html:17 templates/templates/default.html:16
+msgid "English"
+msgstr "Inglés"
+
+#: settings.py:237 templates/_flags.html:6
+#: templates/templates/ccn_default.html:18 templates/templates/default.html:17
+msgid "German"
+msgstr "Alemán"
+
+#: settings.py:238 templates/_flags.html:8
+#: templates/templates/ccn_default.html:20 templates/templates/default.html:19
+msgid "Spanish"
+msgstr "Español"
+
+#: settings.py:239 templates/_flags.html:7
+#: templates/templates/ccn_default.html:19 templates/templates/default.html:18
+msgid "Russian"
+msgstr "Ruso"
+
+#: settings.py:240
+msgid "French"
+msgstr "francés"
+
+#: settings.py:241
+msgid "Chinese"
+msgstr "chino"
+
+#: templates/404.html:4 templates/404.html.py:25 templates/500.html:4
+#: templates/500.html.py:25
+msgid "Page not found"
+msgstr "Page not found"
+
+#: templates/404.html:35 templates/500.html:35
+msgid "Page or translation not found"
+msgstr "Page or translation not found"
+
+#: templates/admin/base_site.html:4 templates/admin/base_site.html.py:7
+msgid "Comune di Montecatini Terme"
+msgstr "Municipalidad de Montecatini Terme"
+
+#: templates/templates/home.html:8
+msgid "Montecatini in breve"
+msgstr "Montecatini en breve"
+
+#: templates/templates/home.html:9
+msgid "Tutte le informazioni su Montecatini."
+msgstr "Montecatini all news."
+
+#: templates/templates/home.html:45
+msgid "Metropolitana culturale"
+msgstr "Metro cultural"
+
+#: templates/templates/home.html:46
+msgid "Terme, Architettura, Parchi."
+msgstr "Termas, Arquitectura, Parques."
+
+#: templates/templates/home.html:53
+msgid "Il Vialone dei Bagni"
+msgstr "La Avenida de los Baños"
+
+#: templates/templates/home.html:56
+msgid "Montecatini Alto"
+msgstr "Montecatini Alto"
+
+#: templates/templates/home.html:59
+msgid "Il 900"
+msgstr "El 900"
+
+#: templates/templates/home.html:62
+msgid "Arte e Cultura"
+msgstr "Arte y Cultura"
+
+#: templates/templates/home.html:71
+msgid "Metropolitana commerciale"
+msgstr "Metro comercial"
+
+#: templates/templates/home.html:72
+msgid "Le vie dello shopping."
+msgstr "Las calles comerciales."
+
+#: templates/templates/home.html:79
+msgid "Shopping"
+msgstr "Shopping"
+
+#: templates/templates/home.html:83
+msgid "Free Time"
+msgstr "Tiempo Libre"
+
+#: templates/templates/home.html:87
+msgid "Food and Drink"
+msgstr "Beber e comer"
+
+#: templates/templates/home.html:91
+msgid "Lodging"
+msgstr "Dormir"
+
+#: templates/templates/home.html:95
+msgid "Services"
+msgstr "Servicios"
+
+#: templates/templates/home.html:108
+msgid "City Life"
+msgstr "City Life"
+
+#: templates/templates/home.html:109
+msgid "Tieniti aggiornato sulle notizie e gli eventi locali."
+msgstr "Ponte al dia sobre las noticias y los eventos locales."

@@ -1,0 +1,384 @@
+{% extends "base.html" %}
+{% load thumbnail static i18n l10n %}
+
+{% block cms_toolbar_area %}{% endblock %}
+
+{% block flags %}
+<div class='flags'>
+    {% language 'it' %}<a class='ita' href='{% url "metro_line" slug %}'>{% trans "Italian" %}</a>{% endlanguage %}
+    {% language 'en' %}<a class='eng' href='{% url "metro_line" slug %}'>{% trans "English" %}</a>{% endlanguage %}
+    {% language 'de' %}<a class='deu' href='{% url "metro_line" slug %}'>{% trans "German" %}</a>{% endlanguage %}
+    {% language 'ru' %}<a class='rus' href='{% url "metro_line" slug %}'>{% trans "Russian" %}</a>{% endlanguage %}
+    {% language 'es' %}<a class='esp' href='{% url "metro_line" slug %}'>{% trans "Spanish" %}</a>{% endlanguage %}
+    {% language 'fr' %}<a class='fra' href='{% url "metro_line" slug %}'>{% trans "French" %}</a>{% endlanguage %}
+    {% language 'zh' %}<a class='cin' href='{% url "metro_line" slug %}'>{% trans "Chinese" %}</a>{% endlanguage %}
+</div>
+{% endblock %}
+
+{% block extraheaders %}
+<!--   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyMTu0VC83iji7621m7YiGErNyPbJshDw&sensor=false"></script> -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&sensor=false&extension=.js"></script>
+{% endblock %}
+
+{% block slider %}
+    {% for p in slider %}
+        {% if forloop.first %}
+        <div id="banner-fade">
+            <ul class="bjqs">
+        {% endif %}
+            <li><img src="{% thumbnail p.image 550x412 upscale crop %}" /></li>
+        {% if forloop.last %}
+            </ul>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endblock slider %}
+
+{% block base_title %}
+    <div class='span12'>
+        <div class="titolo clearfix">
+            <h1 class='{{ slug }}'>
+                <img src="{{ STATIC_URL }}img/icona-dettaglio-{{ class }}.png">
+                {% if slug == 'red' %}
+                {#   <span>{% trans "Red Line" %}: {% trans "Il Vialone dei Bagni" %}</span> #}
+                    <span>{% trans "Il Vialone dei Bagni" %}</span>
+                {% elif slug == 'yellow' %}
+                {#   <span>{% trans "Yellow Line" %}: {% trans "Montecatini Alto" %}</span> #}
+                    <span>{% trans "Montecatini Alto" %}</span>
+                {% elif slug == 'green' %}
+                {#   <span>{% trans "Green Line" %}: {% trans "Il 900" %}</span> #}
+                    <span>{% trans "Il 900" %}</span>
+                {% elif slug == 'blue' %}
+                {# <span>{% trans "Blue Line" %}: {% trans "Arte e Cultura" %}</span> #}
+                    <span>{% trans "Arte e Cultura" %}</span>
+                {% endif %}
+            </h1>
+        </div>
+    </div>
+{% endblock %}
+
+{% block base_content %}
+    {% localize off %}
+        <script type="application/javascript">
+            var pois = [
+            {% for poi in pois_latlng %}{
+                    id: {{ poi.id }},
+                    lat: {{ poi.latitude }},
+                    lng: {{ poi.longitude }},
+                    title: "{{ poi.title|escapejs }}"
+                }{% if not forloop.last %},
+                {% endif %}{% endfor %}
+            ];
+        </script>
+    {% endlocalize %}
+
+    {% comment %}
+    <div id='externalmap'>
+      <div id='map'></div>
+      <div id="download"><a href='#'><img src="{% static "img/download-mappa.png" %}"></a></div>
+    </div>
+    {% endcomment %}
+
+<script type="text/javascript">
+//function initialize() {
+//  var mapOptions = {
+//    zoom: 4,
+//    mapTypeId: google.maps.MapTypeId.ROADMAP
+//  }
+//  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+//  var bounds = new google.maps.LatLngBounds();
+//
+//  for (i in pois) {
+//    var p = pois[i];
+//
+//    var pos = new google.maps.LatLng(p.lat, p.lng);
+//
+//    var marker = new google.maps.Marker({
+//        id: p.id,
+//        position: pos,
+//        map: map,
+//        title: p.title
+//        });
+//
+//    google.maps.event.addListener(marker, 'click', function() {
+//        var openlink = $('.accordion').find("#" + this.id ).children(':first');
+//        openlink.trigger('click');
+//    });
+//
+//    bounds.extend(pos);
+//    map.fitBounds(bounds);
+//  }
+//}
+//
+//google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+    <!--
+    <div id="mappalinea"><img src="{{ STATIC_URL }}img/google-maps.png"></div>
+    <div id="download"><img src="{{ STATIC_URL }}img/download-mappa.png"></div>
+    QUI CI VA IL LINK A UNA MAPPA STATICA SCARICABILE
+    E LA MAPPA VERA
+    SE FOSSE POSSIBILE (lo chiederanno) SI PUO' FARE IN MODO CHE SE ARRIVO CON #132 (con 132 = ID del poi)
+    mi apre diretto il carousel a quel punto?
+    -->
+
+    <div class="pageContent {{ class }}">
+
+        <ul class="accordion clearfix">
+            {% for poi in pois %}
+                <li id='{{ poi.id }}'>
+                  <a id='link_{{ poi.id }}' class='accordionitem open' href="#"><span>{{ poi.title }}</span></a>
+
+                    <div class='subaccordion'>
+                        {% if poi.youtube_id %}
+                        <div class='youtube'>
+
+                          {% if request.is_android %}
+                            <iframe type="text/html" width="100%" height="95%" src="http://www.youtube.com/v/{{ poi.youtube_id }}&autoplay=1&controls=0&showinfo=0&showsearch=0&fs=1&border=0&loop=0&rel=0"></iframe>
+                          {% else %}
+
+
+                            <object width='100%'>
+                              <param name="movie"
+                              value="http://www.youtube.com/v/{{ poi.youtube_id }}&autoplay=0&fs=1&border=0&loop=0&rel=0" />
+                              <param name="allowFullScreen" value="false" />
+                              <embed src="http://www.youtube.com/v/{{ poi.youtube_id }}&autoplay=0&fs=1&border=0&loop=0&rel=0"
+                              type="application/x-shockwave-flash" allowfullscreen="true"></embed>
+                            </object>
+
+                          {% endif %}
+
+                            </div>
+                        {% endif %}
+
+                        {% for image in poi.picture_set.all %}
+                            {% if forloop.first %}
+                            <h3>{% trans "Gallery:" %}</h3>
+                            <div class='poigallery carousel slide'>
+                                <div class="carousel-inner">
+                            {% endif %}
+                                <div class="item">
+                                    <img src="{% thumbnail image.image 640x480 upscale crop %}">
+                                </div>
+                            {% if forloop.last %}
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if poi.mp3 %}
+                            <h3>{% trans "Audio Guide:" %}</h3>
+                            <audio controls>
+                                <source src="{{ poi.mp3.url }}" type="audio/mpeg">
+                            </audio>
+                        {% endif %}
+
+                        <div class='content'>{{ poi.content|safe }}</div>
+
+                        <div class='portamiqui'>
+                            <div class='portamiquiurl' id='poiurl{{ poi.id }}' data-latitude='{{ poi.latitude }}' data-longitude='{{ poi.longitude }}'>{% blocktrans %}PORTAMI QUI{% endblocktrans %}</div>
+                        </div>
+
+                        {% if poi.latitude and poi.longitude %}
+                        <script type="application/javascript">
+                        {% localize off %}
+                        {% if request.is_cordova %}
+
+                          {% if request.is_ios %}
+                            function portamiQui{{ poi.id }}() {
+                                if (navigator.geolocation) {
+                                    navigator.geolocation.getCurrentPosition(function (position) {
+                                        var open = window.open("http://maps.apple.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ poi.latitude }},{{ poi.longitude }}", '_system', 'toolbar=yes');
+                                        if (open == null || typeof(open)=='undefined') {
+                                            location.href = "http://maps.apple.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ poi.latitude }},{{ poi.longitude }}";
+                                        }
+                                    });
+                                } else {
+                                    var open = window.open("http://maps.apple.com/maps?daddr={{ poi.latitude }},{{ poi.longitude }}", '_system', 'toolbar=yes');
+                                    if (open == null || typeof(open)=='undefined') {
+                                        location.href = "http://maps.apple.com/maps?daddr={{ poi.latitude }},{{ poi.longitude }}";
+                                    }
+                                }
+                            }
+                          {% elif request.is_android %}
+                            function portamiQui{{ poi.id }}() {
+
+                              var id = {{ poi.id }};
+                              $('#poiurl' + id).text('LOCALIZZANDO...');
+
+                              try {
+                                $('#poiurl' + id).text('PORTAMI QUI');
+                                location.href = "geo:{{ poi.latitude }},{{ poi.longitude }}";
+                              } catch(e) {
+                                alert(e.message);
+                              }
+                            }
+                          {% else %}
+                            function portamiQui{{ poi.id }}() {
+
+                              var id = {{ poi.id }};
+                              $('#poiurl' + id).text('LOCALIZZANDO...');
+
+                              try {
+                                if (navigator.geolocation) {
+
+                                  navigator.geolocation.getCurrentPosition(
+                                      function(position) {
+                                        $('#poiurl' + id).text('PORTAMI QUI');
+                                        alert(position.coords.latitude, position.coords.longitude);
+                                        location.href = "http://maps.google.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ poi.latitude }},{{ poi.longitude }}";
+                                      },
+                                      function(error){
+                                        $('#poiurl' + id).text('PORTAMI QUI');
+                                        alert(error.message);
+                                        location.href = "http://maps.google.com/maps?daddr={{ poi.latitude }},{{ poi.longitude }}";
+                                      }, {
+                                        enableHighAccuracy: true
+                                        ,timeout : 5000
+                                      });
+
+                                } else {
+                                  $('#poiurl' + id).text('PORTAMI QUI');
+                                  location.target = "_blank";
+                                  location.href = "http://maps.google.com/maps?daddr={{ poi.latitude }},{{ poi.longitude }}";
+                                }
+                              } catch(e) {
+                                alert(e.message);
+                              }
+
+
+
+                            }
+                          {% endif %}
+                        {% else %}
+                          function portamiQui{{ poi.id }}() {
+
+                            var id = {{ poi.id }};
+                            $('#poiurl' + id).text('LOCALIZZANDO...');
+
+                            try {
+                              if (navigator.geolocation) {
+
+                                navigator.geolocation.getCurrentPosition(
+                                    function(position) {
+                                      $('#poiurl' + id).text('PORTAMI QUI');
+                                      location.target = "_blank";
+                                      location.href = "http://maps.google.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ poi.latitude }},{{ poi.longitude }}";
+                                    },
+                                    function(error){
+                                      $('#poiurl' + id).text('PORTAMI QUI');
+                                      location.target = "_blank";
+                                      location.href = "http://maps.google.com/maps?daddr={{ poi.latitude }},{{ poi.longitude }}";
+                                    }, {
+                                      enableHighAccuracy: true
+                                      ,timeout : 5000
+                                    });
+
+//                                navigator.geolocation.getCurrentPosition(function (position) {
+//                                    alert("LAT: " + position.coords.latitude);
+//                                    alert("LNG: " + position.coords.longitude);
+////                                  location.href = "http://maps.google.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ poi.latitude }},{{ poi.longitude }}";
+//                                });
+                              } else {
+                                $('#poiurl' + id).text('PORTAMI QUI');
+                                location.target = "_blank";
+                                location.href = "http://maps.google.com/maps?daddr={{ poi.latitude }},{{ poi.longitude }}";
+                              }
+                            } catch(e) {
+                              alert(e.message);
+                            }
+                          }
+                        {% endif %}
+
+                        if (navigator.geolocation) {
+                           $('#poiurl{{ poi.id }}').attr('href', "#");
+                            $('#poiurl{{ poi.id }}').bind('click', function (e) {
+                                e.preventDefault();
+                                portamiQui{{ poi.id }}();
+                            });
+                        }
+                        </script>
+                        {% endlocalize %}
+                        {% endif %}
+
+                        {% if request.is_cordova and request.is_ios %}
+                        <div id="like" class='clearfix text-center'>
+                            <a href='http://www.facebook.com/sharer/sharer.php?u=http://montecatiniterme.ivirgilius.com{{ poi.get_absolute_url }}'
+                               target="_blank"><img src="{% static "img/social-facebook.png" %}"></a>
+                            <a href='http://twitter.com/share?url=http://montecatiniterme.ivirgilius.com{{ poi.get_absolute_url }}'
+                               target="_blank"><img src="{% static "img/social-twitter.png" %}"></a>
+                            <a href='http://plus.google.com/share?url=http://montecatiniterme.ivirgilius.com{{ poi.get_absolute_url }}'
+                               target="_blank"><img src="{% static "img/social-google.png" %}"></a>
+                        </div>
+                        {% else %}
+                        <div id="like" class='clearfix text-center'>
+                            <a href='http://www.facebook.com/sharer/sharer.php?u=http://montecatiniterme.ivirgilius.com{{ poi.get_absolute_url }}'
+                               target="_blank"><img src="{% static "img/social-facebook.png" %}"></a>
+                            <a href='http://twitter.com/share?url=http://montecatiniterme.ivirgilius.com{{ poi.get_absolute_url }}'
+                               target="_blank"><img src="{% static "img/social-twitter.png" %}"></a>
+                            <a href='http://plus.google.com/share?url=http://montecatiniterme.ivirgilius.com{{ poi.get_absolute_url }}'
+                               target="_blank"><img src="{% static "img/social-google.png" %}"></a>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    {% for subcontent in poi.subcontent_set.all %}
+                        {% if forloop.first %}
+                            <ul>{% endif %}
+                        <li>
+                            <a href='#'>{{ subcontent.title }}</a>
+                            <div class="subcontent">
+                            {{ subcontent.content|safe }}
+                            </div>
+                        </li>
+                        {% if forloop.last %}</ul>{% endif %}
+                    {% endfor %}
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <div id="metro" class='bottoni'>
+
+      <h3>{% trans "Le altre linee della metropolitana culturale" %}</h3>
+
+
+      <div id='mc'>
+        {% if slug != "red" %}
+        <div class="button{% if slug = "red" %} disabled{% endif %}">
+          <a href="{% url "metro_line" "red" %}"><img src="{% static "img/icona-linearossa.png" %}"><div><p>{% trans "Il Vialone dei Bagni" %}</p></div></a>
+        </div>
+        {% endif %}
+
+        {% if slug != "yellow" %}
+        <div class="button{% if slug = "yellow" %} disabled {% endif %}">
+          <a href="{% url "metro_line" "yellow" %}"><img src="{% static "img/icona-lineagialla.png" %}"><div><p>{% trans "Montecatini Alto" %}</p></div></a>
+        </div>
+        {% endif %}
+
+        {% if slug != "green" %}
+        <div class="button{% if slug = "green" %} disabled{% endif %}">
+          <a href="{% url "metro_line" "green" %}"><img src="{% static "img/icona-lineaverde.png" %}"><div><p>{% trans "Il 900" %}</p></div></a>
+        </div>
+        {% endif %}
+
+        {% if slug != "blue" %}
+        <div class="button{% if slug != "blue" %} disabled{% endif %}">
+          <a href="{% url "metro_line" "blue" %}"><img src="{% static "img/icona-lineablu.png" %}"><div><p>{% trans "Arte e Cultura" %}</p></div></a>
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="break"></div>
+
+    </div>
+
+<script type="application/javascript">
+$(".portamiqui").hide();
+if (navigator.geolocation) {
+  $('.portamiqui').show();
+}
+</script>
+
+{% endblock %}

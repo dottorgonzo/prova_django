@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load thumbnail static i18n %}
+
+{% block cms_toolbar_area %}{% endblock %}
+
+{% block flags %}
+<div class='flags'>
+    {% language 'it' %}<a class='ita' href='{% url "montecatini_news" item.id %}'>{% trans "Italian" %}</a>{% endlanguage %}
+    {% language 'en' %}<a class='eng' href='{% url "montecatini_news" item.id %}'>{% trans "English" %}</a>{% endlanguage %}
+    {% language 'de' %}<a class='deu' href='{% url "montecatini_news" item.id %}'>{% trans "German" %}</a>{% endlanguage %}
+    {% language 'ru' %}<a class='rus' href='{% url "montecatini_news" item.id %}'>{% trans "Russian" %}</a>{% endlanguage %}
+    {% language 'es' %}<a class='esp' href='{% url "montecatini_news" item.id %}'>{% trans "Spanish" %}</a>{% endlanguage %}
+    {% language 'fr' %}<a class='fra' href='{% url "montecatini_news" item.id %}'>{% trans "French" %}</a>{% endlanguage %}
+    {% language 'zh' %}<a class='cin' href='{% url "montecatini_news" item.id %}'>{% trans "Chinese" %}</a>{% endlanguage %}
+</div>
+{% endblock %}
+
+{% block title_head %}{{ item.title }}{% endblock %}
+
+{% block back %}
+    <div id="header">
+        <div id="logo"><img src="{% static "img/logo.png" %}"></div>
+        <div id="top">
+            <a href="{% url "montecatini_news" %}"><img src="{% static "img/back.png" %}"></a>
+        </div>
+    </div>
+{% endblock back %}
+
+{% block slider %}
+    <div class='noslider'></div>
+{% endblock slider %}
+
+{% block base_title %}
+    <div class='span12'>
+        <div class="titolo clearfix">
+            <h1>
+                <img src="{% static "img/icona-dettaglio-news.png" %}"/>
+                <span>{{ item.title }}</span>
+            </h1>
+        </div>
+    </div>
+{% endblock %}
+
+{% block base_content %}
+    <div class="contentpage">
+        <div class="top">
+            <div class="image">
+                {% if item.picture %}
+                    <img src="{% thumbnail item.picture 190x190 upscale crop %}"/>
+                {% else %}
+                    <img src="{% static "img/pixel.png" %}"/>
+                {% endif %}
+            </div>
+
+            <div class="abstract">
+                <h2>{{ item.title }}</h2>
+
+                {% if item.subtitle1 %}<p>{{ item.subtitle1 }}</p>{% endif %}
+                {% if item.subtitle2 %}<p>{{ item.subtitle2 }}</p>{% endif %}
+            </div>
+            <div class="break"></div>
+        </div>
+    </div>
+
+    <div class="contenttext">
+      {{ item.content|safe }}
+      <br/><br/>
+    </div>
+{% endblock %}
+

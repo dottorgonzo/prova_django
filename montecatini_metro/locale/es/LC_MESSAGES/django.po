@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-25 16:45+0100\n"
+"PO-Revision-Date: 2014-04-14 14:01+0200\n"
+"Last-Translator: Federico Gasparro <info@multimediatouring.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
+
+#: admin.py:31 models.py:40 models.py:69
+msgid "title"
+msgstr "titulo"
+
+#: cms_app.py:8
+msgid "Metro App"
+msgstr "Metro"
+
+#: models.py:16 models.py:29
+msgid "Red Line"
+msgstr "Linea Roja"
+
+#: models.py:17 models.py:30
+msgid "Yellow Line"
+msgstr "Linea Amarilla"
+
+#: models.py:18 models.py:31
+msgid "Green Line"
+msgstr "Línea Verde"
+
+#: models.py:19 models.py:32
+msgid "Blue Line"
+msgstr "Línea Azul"
+
+#: models.py:37 models.py:64 models.py:86 models.py:99
+msgid "date added"
+msgstr "fecha de adición"
+
+#: models.py:38 models.py:65 models.py:87 models.py:100
+msgid "last update"
+msgstr "última actualización"
+
+#: models.py:41 models.py:70
+msgid "content"
+msgstr "contenido"
+
+#: models.py:42
+msgid "YouTube ID"
+msgstr "YouTube ID"
+
+#: models.py:43
+msgid "mp3 audio"
+msgstr "mp3 audio"
+
+#: models.py:45
+msgid "line"
+msgstr "línea"
+
+#: models.py:46 models.py:48 models.py:49 models.py:67 models.py:90
+#: models.py:102
+msgid "The same for all translations."
+msgstr "Se utiliza para todas las traducciones."
+
+#: models.py:48
+msgid "latitude"
+msgstr "latitud"
+
+#: models.py:49
+msgid "longitude"
+msgstr "longitud"
+
+#: models.py:59
+msgid "point of interest"
+msgstr "point of interest"
+
+#: models.py:60
+msgid "points of interests"
+msgstr "points of interest"
+
+#: models.py:67 models.py:90
+msgid "ordering"
+msgstr "clasificación"
+
+#: models.py:81
+msgid "subcontent"
+msgstr "subcontent"
+
+#: models.py:82
+msgid "subcontents"
+msgstr "subcontents"
+
+#: models.py:89 models.py:103
+msgid "image"
+msgstr "imagen"
+
+#: models.py:89 models.py:103
+msgid ""
+"The same for all translations. Si consiglia 640x480 pixel con soggetto "
+"centrale, PNG o JPG. ATTENZIONE: la visualizzazione cambia da dispositivo a "
+"dispositivo."
+msgstr ""
+"Lo mismo para todas las traducciones. Recomendamos 640x480 píxeles con el "
+"tema central, PNG o JPG. PRECAUCIÓN: La pantalla cambia de dispositivo a "
+"dispositivo."
+
+#: models.py:94
+msgid "picture"
+msgstr "imagen"
+
+#: models.py:95
+msgid "pictures"
+msgstr "fotografías"
+
+#: models.py:101
+msgid "area"
+msgstr "area"
+
+#: models.py:106
+msgid "picture for slider"
+msgstr "picture for slider"
+
+#: models.py:107
+msgid "pictures for slider"
+msgstr "pictures for slider"
+
+#: templates/metro/linea.html:8
+msgid "Italian"
+msgstr "Italiano"
+
+#: templates/metro/linea.html:9
+msgid "English"
+msgstr "Inglés"
+
+#: templates/metro/linea.html:10
+msgid "German"
+msgstr "Alemán"
+
+#: templates/metro/linea.html:11
+msgid "Russian"
+msgstr "Ruso"
+
+#: templates/metro/linea.html:12
+msgid "Spanish"
+msgstr "Español"
+
+#: templates/metro/linea.html:42 templates/metro/linea.html.py:349
+msgid "Il Vialone dei Bagni"
+msgstr "La Avenida de los Baños"
+
+#: templates/metro/linea.html:45 templates/metro/linea.html.py:355
+msgid "Montecatini Alto"
+msgstr "Montecatini Alto"
+
+#: templates/metro/linea.html:48 templates/metro/linea.html.py:361
+msgid "Il 900"
+msgstr "El 900"
+
+#: templates/metro/linea.html:51 templates/metro/linea.html.py:367
+msgid "Arte e Cultura"
+msgstr "Arte y Cultura"
+
+#: templates/metro/linea.html:155
+msgid "Gallery:"
+msgstr "Gallery:"
+
+#: templates/metro/linea.html:169
+msgid "Audio Guide:"
+msgstr "Audio Guide:"
+
+#: templates/metro/linea.html:178
+msgid "PORTAMI QUI"
+msgstr "TRAERME AQUI"
+
+#: templates/metro/linea.html:343
+msgid "Le altre linee della metropolitana culturale"
+msgstr "Las otras líneas de metro culturales"

@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+{% load i18n l10n static %}
+
+{% block title_head %}{{ title }}{% endblock %}
+
+{% block cms_toolbar_area %}{% endblock %}
+
+{% block flags %}
+<div class='flags'>
+    {% language 'it' %}<a class='ita' href='{{ place.get_absolute_url }}'>{% trans "Italian" %}</a>{% endlanguage %}
+    {% language 'en' %}<a class='eng' href='{{ place.get_absolute_url }}'>{% trans "English" %}</a>{% endlanguage %}
+    {% language 'de' %}<a class='deu' href='{{ place.get_absolute_url }}'>{% trans "German" %}</a>{% endlanguage %}
+    {% language 'ru' %}<a class='rus' href='{{ place.get_absolute_url }}'>{% trans "Russian" %}</a>{% endlanguage %}
+    {% language 'es' %}<a class='esp' href='{{ place.get_absolute_url }}'>{% trans "Spanish" %}</a>{% endlanguage %}
+    {% language 'fr' %}<a class='fra' href='{{ place.get_absolute_url }}'>{% trans "French" %}</a>{% endlanguage %}
+    {% language 'zh' %}<a class='cin' href='{{ place.get_absolute_url }}'>{% trans "Chinese" %}</a>{% endlanguage %}
+</div>
+{% endblock %}
+
+{% block slider %}
+{% if place.premium %}
+  {% if place.placepicture_set.all %}
+    <div id="banner-fade">
+      <ul class="bjqs">
+        {% for g in place.placepicture_set.all %}
+        <li><img src="{{ g.picture.url }}" title=""></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% else %}
+    <div class='noslider'></div>
+  {% endif %}
+{% else %}
+<div class='noslider'></div>
+{% endif %}
+{% endblock slider %}
+
+{% block back %}
+    <div id="header">
+      <div id="logo">
+        <img src="{% static "img/logo.png" %}">
+
+        <div id='currentlanguage'>
+          <span class='{{ request.LANGUAGE_CODE }}'></span>
+          <div class='freccia'></div>
+        </div>
+      </div>
+      <div id="top">
+          <a href="{% url "montecatini_ccn.views.category" rootID category.id %}"><img src="{% static "img/back.png" %}"></a>
+      </div>
+    </div>
+{% endblock back %}
+
+{% block base_title %}
+<div class='span12'>
+  <div class="titolo clearfix">
+    <h1>
+      {% if rootID == 1 %}
+        <img src="{% static "img/icona-dettaglio-shopping.png" %}">
+      {% elif rootID == 2 %}
+        <img src="{% static "img/icona-dettaglio-tempolibero.png" %}">
+      {% elif rootID == 3 %}
+        <img src="{% static "img/icona-dettaglio-mangiare.png" %}">
+      {% elif rootID == 4 %}
+        <img src="{% static "img/icona-dettaglio-dormire.png" %}">
+      {% elif rootID == 5 %}
+        <img src="{% static "img/icona-dettaglio-servizi.png" %}">
+      {% endif %}
+
+      <span>{{ title }}</span>
+    </h1>
+  </div>
+</div>
+{% endblock %}
+
+{% block base_content %}
+
+    <div id="descrizione" class='clearfix'>
+        {% if place.premium %}
+        <div class="text_content">
+        {{ place.content|safe }}
+        </div>
+        {% endif %}
+
+        <ul class='information'>
+            {% if place.address %}
+            <li class='clearfix'>
+              <img src="{% static "img/icona-negozio-indirizzo.png" %}">
+              <p>{{ place.address|truncatechars:40 }}</p>
+            </li>
+            {% endif %}
+
+            {% if place.phone %}
+            <li class='clearfix'>
+              <a href="tel:{{ place.phone }}" target="_blank">
+                <img src="{% static "img/icona-negozio-telefono.png" %}">
+                <p>{{ place.phone }}</p>
+              </a>
+            </li>
+            {% endif %}
+
+            {% if place.email %}
+            <li class='clearfix'>
+              <a href="mailto:{{ place.email }}" target="_blank">
+                <img src="{% static "img/icona-negozio-email.png" %}">
+                <p>{{ place.email }}</p>
+              </a>
+            </li>
+            {% endif %}
+
+            {% if place.url %}
+            <li class='clearfix'>
+              <img src="{% static "img/icona-negozio-website.png" %}">
+              <!--<p><a target="_blank" href="{{ place.url }}">{{ place.url|truncatechars:40 }}</a></p>-->
+              <p><a href="#" onclick="window.open('{{ place.url }}', '_system', 'toolbar=yes'); return false;">{{ place.url|truncatechars:40 }}</a></p>
+            </li>
+            {% endif %}
+
+        </ul>
+
+        {% if request.is_cordova and request.is_ios %}
+        <div id="like" class='clearfix'>
+          <a href='http://www.facebook.com/sharer/sharer.php?u=http://montecatiniterme.ivirgilius.com{{ place.get_absolute_url }}'
+            target="_blank"><img src="{% static "img/social-facebook.png" %}"></a>
+          <a href='http://twitter.com/share?url=http://montecatiniterme.ivirgilius.com{{ place.get_absolute_url }}'
+            target="_blank"><img src="{% static "img/social-twitter.png" %}"></a>
+          <a href='http://plus.google.com/share?url=http://montecatiniterme.ivirgilius.com{{ place.get_absolute_url }}'
+            target="_blank"><img src="{% static "img/social-google.png" %}"></a>
+        </div>
+        {% else %}
+        <div id="like" class='clearfix'>
+          <a href='http://www.facebook.com/sharer/sharer.php?u=http://montecatiniterme.ivirgilius.com{{ place.get_absolute_url }}'
+            target="_blank"><img src="{% static "img/social-facebook.png" %}"></a>
+          <a href='http://twitter.com/share?url=http://montecatiniterme.ivirgilius.com{{ place.get_absolute_url }}'
+            target="_blank"><img src="{% static "img/social-twitter.png" %}"></a>
+          <a href='http://plus.google.com/share?url=http://montecatiniterme.ivirgilius.com{{ place.get_absolute_url }}'
+            target="_blank"><img src="{% static "img/social-google.png" %}"></a>
+        </div>
+        {% endif %}
+
+        {% if place.latitude and place.longitude %}
+        <div class='portamiqui'>
+          <a class='portamiquiurl' target='_blank' href="#">{% blocktrans %}PORTAMI QUI{% endblocktrans %}</a>
+        </div>
+        {% endif %}
+
+    </div>
+
+{% if place.latitude and place.longitude %}
+<script type="application/javascript">
+{% localize off %}
+$(".portamiqui").hide();
+
+var latitude = {{ place.latitude }};
+var longitude = {{ place.longitude }};
+
+{% if request.is_cordova %}
+  {% if request.is_ios %}
+  function portamiQui() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+              var open = window.open("http://maps.apple.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ place.latitude }},{{ place.longitude }}", '_system', 'toolbar=yes');
+              if (open == null || typeof(open)=='undefined') {
+                  location.href = "http://maps.apple.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ place.latitude }},{{ place.longitude }}";
+              }
+          });
+      } else {
+          var open = window.open("http://maps.apple.com/maps?daddr={{ place.latitude }},{{ place.longitude }}", '_system', 'toolbar=yes');
+          if (open == null || typeof(open)=='undefined') {
+              location.href = "http://maps.apple.com/maps?daddr={{ place.latitude }},{{ place.longitude }}";
+          }
+      }
+  }
+  {% elif request.is_android %}
+  function portamiQui() {
+
+    location.target = "_blank";
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        location.href = "http://maps.google.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ place.latitude }},{{ place.longitude }}";
+      });
+    } else {
+      location.href = "http://maps.google.com/maps?daddr={{ place.latitude }},{{ place.longitude }}";
+    }
+
+//      location.href = "geo:{{ place.latitude }},{{ place.longitude }}";
+  //    location.href = "http://maps.google.com/maps?daddr={{ place.latitude }},{{ place.longitude }}";
+  }
+  {% else %}
+  function portamiQui() {
+    location.target = "_blank";
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        location.href = "http://maps.google.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ place.latitude }},{{ place.longitude }}";
+      });
+    } else {
+      location.href = "http://maps.google.com/maps?daddr={{ place.latitude }},{{ place.longitude }}";
+    }
+  }
+  {% endif %}
+{% else %}
+  function portamiQui() {
+    location.target = "_blank";
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        location.href = "http://maps.google.com/maps?saddr=" + position.coords.latitude + "," + position.coords.longitude + "&daddr={{ place.latitude }},{{ place.longitude }}";
+      });
+    } else {
+      location.href = "http://maps.google.com/maps?daddr={{ place.latitude }},{{ place.longitude }}";
+    }
+  }
+{% endif %}
+
+if (navigator.geolocation) {
+  $('.portamiquiurl').attr('href', "#");
+  $('.portamiqui').show();
+  $('.portamiquiurl').bind('click', function (e) {
+    e.preventDefault();
+    portamiQui();
+  });
+}
+
+{% endlocalize %}
+</script>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-25 16:45+0100\n"
+"PO-Revision-Date: 2014-03-25 21:21+0100\n"
+"Last-Translator: Federico Gasparro <info@multimediatouring.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.2\n"
+
+#: settings.py:235 templates/_flags.html:4
+#: templates/templates/ccn_default.html:16 templates/templates/default.html:15
+msgid "Italian"
+msgstr "意大利语"
+
+#: settings.py:236 templates/_flags.html:5
+#: templates/templates/ccn_default.html:17 templates/templates/default.html:16
+msgid "English"
+msgstr "英语"
+
+#: settings.py:237 templates/_flags.html:6
+#: templates/templates/ccn_default.html:18 templates/templates/default.html:17
+msgid "German"
+msgstr "德语"
+
+#: settings.py:238 templates/_flags.html:8
+#: templates/templates/ccn_default.html:20 templates/templates/default.html:19
+msgid "Spanish"
+msgstr "西班牙语"
+
+#: settings.py:239 templates/_flags.html:7
+#: templates/templates/ccn_default.html:19 templates/templates/default.html:18
+msgid "Russian"
+msgstr "俄语"
+
+#: settings.py:240
+msgid "French"
+msgstr "法国人"
+
+#: settings.py:241
+msgid "Chinese"
+msgstr "中国的"
+
+#: templates/404.html:4 templates/404.html.py:25 templates/500.html:4
+#: templates/500.html.py:25
+msgid "Page not found"
+msgstr "页面未找到"
+
+#: templates/404.html:35 templates/500.html:35
+msgid "Page or translation not found"
+msgstr "页面或翻译未找到"
+
+#: templates/admin/base_site.html:4 templates/admin/base_site.html.py:7
+msgid "Comune di Montecatini Terme"
+msgstr "蒙泰卡蒂尼市政府"
+
+#: templates/templates/home.html:8
+msgid "Montecatini in breve"
+msgstr "蒙泰卡蒂尼简要"
+
+#: templates/templates/home.html:9
+msgid "Tutte le informazioni su Montecatini."
+msgstr "蒙泰卡蒂尼所有信息"
+
+#: templates/templates/home.html:45
+msgid "Metropolitana culturale"
+msgstr "文化都市"
+
+#: templates/templates/home.html:46
+msgid "Terme, Architettura, Parchi."
+msgstr "温泉，建筑，公园."
+
+#: templates/templates/home.html:53
+msgid "Il Vialone dei Bagni"
+msgstr "浴池大道"
+
+#: templates/templates/home.html:56
+msgid "Montecatini Alto"
+msgstr "蒙泰卡蒂尼奥拓"
+
+#: templates/templates/home.html:59
+msgid "Il 900"
+msgstr "1900年代"
+
+#: templates/templates/home.html:62
+msgid "Arte e Cultura"
+msgstr "艺术”和“文化"
+
+#: templates/templates/home.html:71
+msgid "Metropolitana commerciale"
+msgstr "贸易都市"
+
+#: templates/templates/home.html:72
+msgid "Le vie dello shopping."
+msgstr "购物街"
+
+#: templates/templates/home.html:79
+msgid "Shopping"
+msgstr "购物"
+
+#: templates/templates/home.html:83
+msgid "Free Time"
+msgstr "空闲时间"
+
+#: templates/templates/home.html:87
+msgid "Food and Drink"
+msgstr "吃喝"
+
+#: templates/templates/home.html:91
+msgid "Lodging"
+msgstr "睡觉"
+
+#: templates/templates/home.html:95
+msgid "Services"
+msgstr "服务"
+
+#: templates/templates/home.html:108
+msgid "City Life"
+msgstr "城市生活"
+
+#: templates/templates/home.html:109
+msgid "Tieniti aggiornato sulle notizie e gli eventi locali."
+msgstr "保持资讯和地方活动上的更新"
